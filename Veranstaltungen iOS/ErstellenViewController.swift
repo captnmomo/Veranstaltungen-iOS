@@ -11,13 +11,15 @@ import UIKit
 class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
 
+    @IBOutlet weak var ort: UITextField!
+    @IBOutlet weak var hausnummer: UITextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var beschreibung: UITextField!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var kategorie: UITextField!
     @IBOutlet weak var preis: UITextField!
     @IBOutlet weak var datum: UITextField!
-    @IBOutlet weak var adresse: UITextField!
+    @IBOutlet weak var strasse: UITextField!
     @IBOutlet weak var webiste: UITextField!
     
     let pickerDatum = UIDatePicker()
@@ -34,7 +36,9 @@ class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         self.name.inputAccessoryView = keyboardToolbar
         self.preis.inputAccessoryView = keyboardToolbar
         self.datum.inputAccessoryView = keyboardToolbar
-        self.adresse.inputAccessoryView = keyboardToolbar
+        self.strasse.inputAccessoryView = keyboardToolbar
+        self.hausnummer.inputAccessoryView = keyboardToolbar
+        self.ort.inputAccessoryView = keyboardToolbar
         self.webiste.inputAccessoryView = keyboardToolbar
         self.beschreibung.inputAccessoryView = keyboardToolbar
     }
