@@ -1,19 +1,21 @@
 //
-//  EventModel.swift
+//  LocationModel.swift
 //  Veranstaltungen iOS
 //
-//  Created by momo on 28.05.18.
+//  Created by momo on 05.06.18.
 //  Copyright © 2018 SE1. All rights reserved.
 //
 
 import UIKit
 
 class EventModel: NSObject {
-    //properties of a stock
+
+    //properties
     
     var name: String?
+    var kategorie: String?
     var preis: String?
-    
+    var datum: String?
     
     
     //empty constructor
@@ -23,22 +25,23 @@ class EventModel: NSObject {
         
     }
     
-    //construct with @name and @price parameters
+    //construct with @name, @address, @latitude, and @longitude parameters
     
-    init(name: String, preis: String) {
+    init(name: String, kategorie: String, preis: String, datum: String) {
         
         self.name = name
+        self.kategorie = kategorie
         self.preis = preis
-        
+        self.datum = datum
         
     }
     
     
-    //prints a stock's name and price
+    //prints object's current state
     
     override var description: String {
-        return "Name: \(String(describing: name)), Address: \(String(describing: preis))"
+        return "Name: \(name), Kategorie: \(kategorie), Preis: \(preis), Datum: \(datum)"
         
     }
-
+    
 }

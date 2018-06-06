@@ -12,8 +12,8 @@
 		FA6459D020BB2A0500770EE6 /* ErstellenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6459CF20BB2A0500770EE6 /* ErstellenViewController.swift */; };
 		FA6459D220BC05E400770EE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6459D120BC05E400770EE6 /* LoginViewController.swift */; };
 		FA6459D420BC05F900770EE6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6459D320BC05F900770EE6 /* RegisterViewController.swift */; };
-		FA6459D620BC533A00770EE6 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6459D520BC533A00770EE6 /* FeedModel.swift */; };
-		FA6459D820BC535100770EE6 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6459D720BC535100770EE6 /* EventModel.swift */; };
+		FA8572A020C6DA7F00455CB0 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85729F20C6DA7F00455CB0 /* EventModel.swift */; };
+		FA8572A220C6DAD300455CB0 /* EventDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572A120C6DAD300455CB0 /* EventDataModel.swift */; };
 		FAEC0C2920B592ED00674456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2820B592ED00674456 /* AppDelegate.swift */; };
 		FAEC0C2B20B592ED00674456 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2A20B592ED00674456 /* FirstViewController.swift */; };
 		FAEC0C2D20B592ED00674456 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2C20B592ED00674456 /* SecondViewController.swift */; };
@@ -47,8 +47,8 @@
 		FA6459CF20BB2A0500770EE6 /* ErstellenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErstellenViewController.swift; sourceTree = "<group>"; };
 		FA6459D120BC05E400770EE6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA6459D320BC05F900770EE6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		FA6459D520BC533A00770EE6 /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
-		FA6459D720BC535100770EE6 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		FA85729F20C6DA7F00455CB0 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		FA8572A120C6DAD300455CB0 /* EventDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataModel.swift; sourceTree = "<group>"; };
 		FAEC0C2520B592ED00674456 /* Veranstaltungen iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Veranstaltungen iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEC0C2820B592ED00674456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAEC0C2A20B592ED00674456 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 				FA6459CF20BB2A0500770EE6 /* ErstellenViewController.swift */,
 				FA6459D120BC05E400770EE6 /* LoginViewController.swift */,
 				FA6459D320BC05F900770EE6 /* RegisterViewController.swift */,
-				FA6459D520BC533A00770EE6 /* FeedModel.swift */,
-				FA6459D720BC535100770EE6 /* EventModel.swift */,
+				FA85729F20C6DA7F00455CB0 /* EventModel.swift */,
+				FA8572A120C6DAD300455CB0 /* EventDataModel.swift */,
 			);
 			path = "Veranstaltungen iOS";
 			sourceTree = "<group>";
@@ -281,14 +281,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6459D220BC05E400770EE6 /* LoginViewController.swift in Sources */,
-				FA6459D620BC533A00770EE6 /* FeedModel.swift in Sources */,
 				FAEC0C2D20B592ED00674456 /* SecondViewController.swift in Sources */,
 				FA6459D020BB2A0500770EE6 /* ErstellenViewController.swift in Sources */,
 				FA6459D420BC05F900770EE6 /* RegisterViewController.swift in Sources */,
+				FA8572A020C6DA7F00455CB0 /* EventModel.swift in Sources */,
 				FA1CFA6520BB24DD0061B548 /* PhotoUploadViewController.swift in Sources */,
 				FAEC0C2920B592ED00674456 /* AppDelegate.swift in Sources */,
+				FA8572A220C6DAD300455CB0 /* EventDataModel.swift in Sources */,
 				FAEC0C2B20B592ED00674456 /* FirstViewController.swift in Sources */,
-				FA6459D820BC535100770EE6 /* EventModel.swift in Sources */,
 				FA07360120BAB5EC00CE409E /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,18 +1,24 @@
+//
+//  HomeModel.swift
+//  Veranstaltungen iOS
+//
+//  Created by momo on 05.06.18.
+//  Copyright © 2018 SE1. All rights reserved.
+//
 
-import Foundation
+import UIKit
 
-protocol FeedModelProtocol: class {
+protocol EventModelProtocol: class {
     func itemsDownloaded(items: NSArray)
 }
 
+class EventDataModel: NSObject, URLSessionDataDelegate {
 
-class FeedModel: NSObject, URLSessionDataDelegate {
+    //properties
     
+    weak var delegate: EventModelProtocol!
     
-    
-    weak var delegate: FeedModelProtocol!
-    
-    let urlPath = "localhost:8888/getData.php" //Change to the web address of your stock_service.php file
+    let urlPath = "http://localhost:8888/event.php" //this will be changed to the path where service.php lives
     
     func downloadItems() {
         
@@ -22,16 +28,17 @@ class FeedModel: NSObject, URLSessionDataDelegate {
         let task = defaultSession.dataTask(with: url) { (data, response, error) in
             
             if error != nil {
-                print("Error")
+               print("Failed to download data")
             }else {
-                print("stocks downloaded")
+                print("Data downloaded")
                 self.parseJSON(data!)
             }
             
         }
         
         task.resume()
-}
+    }
+    
     func parseJSON(_ data:Data) {
         
         var jsonResult = NSArray()
@@ -55,15 +62,16 @@ class FeedModel: NSObject, URLSessionDataDelegate {
             let event = EventModel()
             
             //the following insures none of the JsonElement values are nil through optional binding
-            if let name = jsonElement["name"] as? String,
-                let preis = jsonElement["preis"] as? String
-                
+            if let name = jsonElement["Name"] as? String,
+                let kategorie = jsonElement["Kategorie"] as? String,
+                let preis = jsonElement["Preis"] as? String,
+                let datum = jsonElement["Datum"] as? String
             {
-                print(name)
-                print(preis)
-                event.name = name
-                event.preis = preis
                 
+                event.name = name
+                event.kategorie = kategorie
+                event.preis = preis
+                event.datum = datum
                 
             }
             
@@ -77,4 +85,5 @@ class FeedModel: NSObject, URLSessionDataDelegate {
             
         })
     }
+    
 }
