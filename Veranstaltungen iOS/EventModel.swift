@@ -18,6 +18,8 @@ class EventModel: NSObject {
     var datum: String?
     var latitude: String?
     var longitude: String?
+    var id: String?
+    var website: String?
     
     
     //empty constructor
@@ -29,7 +31,7 @@ class EventModel: NSObject {
     
     //construct with @name, @address, @latitude, and @longitude parameters
     
-    init(name: String, kategorie: String, preis: String, datum: String, latitude: String, longitude: String) {
+    init(name: String, kategorie: String, preis: String, datum: String, latitude: String, longitude: String, id: String, website: String) {
         
         self.name = name
         self.kategorie = kategorie
@@ -37,6 +39,8 @@ class EventModel: NSObject {
         self.datum = datum
         self.latitude = latitude
         self.longitude = longitude
+        self.id = id
+        self.website = website
         
     }
     
@@ -44,7 +48,7 @@ class EventModel: NSObject {
     //prints object's current state
     
     override var description: String {
-        return "Name: \(name), Kategorie: \(kategorie), Preis: \(preis), Datum: \(datum), latitude: \(latitude), longitude: \(longitude)"
+        return "Name: \(name), Kategorie: \(kategorie), Preis: \(preis), Datum: \(datum), latitude: \(latitude), longitude: \(longitude), id: \(id), website: \(website)"
         
     }
     

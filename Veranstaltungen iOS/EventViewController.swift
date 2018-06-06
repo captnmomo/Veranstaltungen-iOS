@@ -23,13 +23,46 @@ class EventViewController: UIViewController {
         detailVC.selectedLocation = selectedLocation
     }
     
-    @IBOutlet weak var websiteLabel: UILabel!
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+            }.resume()
+    }
+    
+    func downloadImage(url: URL) {
+        print("Download Started")
+        getDataFromUrl(url: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() {
+                self.Bild.image = UIImage(data: data)
+            }
+        }
+    }
+    
+    @IBOutlet weak var websiteField: UITextView!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var beschreibungField: UITextView!
     @IBOutlet weak var datumLabel: UILabel!
     @IBOutlet weak var kategorieLabel: UILabel!
     @IBOutlet weak var preisLabel: UILabel!
     @IBOutlet weak var Bild: UIImageView!
     override func viewDidLoad() {
+        datumLabel.text = selectedLocation!.datum!
+        kategorieLabel.text = selectedLocation!.kategorie!
+        preisLabel.text = selectedLocation!.preis! + "€"
+        nameLabel.text = selectedLocation!.name!
+        websiteField.isEditable = false
+        websiteField.contentInset = UIEdgeInsetsMake(-6.0,0.0,0,0.0)
+        websiteField.dataDetectorTypes = UIDataDetectorTypes.all
+        websiteField.text = selectedLocation!.website!
+        
+        if let url = URL(string: "http://localhost:8888/getImage.php?id=" + selectedLocation!.id!) {
+            Bild.contentMode = .scaleAspectFit
+            downloadImage(url: url)
+        }
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

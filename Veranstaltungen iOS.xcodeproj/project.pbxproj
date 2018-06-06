@@ -17,6 +17,10 @@
 		FA8572A420C803F400455CB0 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572A320C803F400455CB0 /* EventViewController.swift */; };
 		FA8572A620C805BA00455CB0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572A520C805BA00455CB0 /* MapViewController.swift */; };
 		FA8572A920C8070600455CB0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8572A820C8070600455CB0 /* MapKit.framework */; };
+		FA8572AB20C863D200455CB0 /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572AA20C863D200455CB0 /* LoginDataModel.swift */; };
+		FA8572AD20C868F100455CB0 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572AC20C868F100455CB0 /* LoginModel.swift */; };
+		FA8572AF20C875BD00455CB0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572AE20C875BD00455CB0 /* ProfileViewController.swift */; };
+		FA8572B120C87F5F00455CB0 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572B020C87F5F00455CB0 /* MoreViewController.swift */; };
 		FAEC0C2920B592ED00674456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2820B592ED00674456 /* AppDelegate.swift */; };
 		FAEC0C2B20B592ED00674456 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2A20B592ED00674456 /* FirstViewController.swift */; };
 		FAEC0C2D20B592ED00674456 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2C20B592ED00674456 /* SecondViewController.swift */; };
@@ -55,6 +59,10 @@
 		FA8572A320C803F400455CB0 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		FA8572A520C805BA00455CB0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FA8572A820C8070600455CB0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FA8572AA20C863D200455CB0 /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
+		FA8572AC20C868F100455CB0 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		FA8572AE20C875BD00455CB0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FA8572B020C87F5F00455CB0 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		FAEC0C2520B592ED00674456 /* Veranstaltungen iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Veranstaltungen iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEC0C2820B592ED00674456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAEC0C2A20B592ED00674456 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +153,10 @@
 				FA8572A120C6DAD300455CB0 /* EventDataModel.swift */,
 				FA8572A320C803F400455CB0 /* EventViewController.swift */,
 				FA8572A520C805BA00455CB0 /* MapViewController.swift */,
+				FA8572AA20C863D200455CB0 /* LoginDataModel.swift */,
+				FA8572AC20C868F100455CB0 /* LoginModel.swift */,
+				FA8572AE20C875BD00455CB0 /* ProfileViewController.swift */,
+				FA8572B020C87F5F00455CB0 /* MoreViewController.swift */,
 			);
 			path = "Veranstaltungen iOS";
 			sourceTree = "<group>";
@@ -299,15 +311,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6459D220BC05E400770EE6 /* LoginViewController.swift in Sources */,
+				FA8572AD20C868F100455CB0 /* LoginModel.swift in Sources */,
 				FA8572A420C803F400455CB0 /* EventViewController.swift in Sources */,
 				FAEC0C2D20B592ED00674456 /* SecondViewController.swift in Sources */,
 				FA6459D020BB2A0500770EE6 /* ErstellenViewController.swift in Sources */,
+				FA8572B120C87F5F00455CB0 /* MoreViewController.swift in Sources */,
 				FA6459D420BC05F900770EE6 /* RegisterViewController.swift in Sources */,
 				FA8572A020C6DA7F00455CB0 /* EventModel.swift in Sources */,
 				FA1CFA6520BB24DD0061B548 /* PhotoUploadViewController.swift in Sources */,
 				FA8572A620C805BA00455CB0 /* MapViewController.swift in Sources */,
+				FA8572AB20C863D200455CB0 /* LoginDataModel.swift in Sources */,
 				FAEC0C2920B592ED00674456 /* AppDelegate.swift in Sources */,
 				FA8572A220C6DAD300455CB0 /* EventDataModel.swift in Sources */,
+				FA8572AF20C875BD00455CB0 /* ProfileViewController.swift in Sources */,
 				FAEC0C2B20B592ED00674456 /* FirstViewController.swift in Sources */,
 				FA07360120BAB5EC00CE409E /* TableViewController.swift in Sources */,
 			);

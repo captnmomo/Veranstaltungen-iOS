@@ -1,34 +1,31 @@
 //
-//  HomeModel.swift
+//  LoginDataModel.swift
 //  Veranstaltungen iOS
 //
-//  Created by momo on 05.06.18.
+//  Created by momo on 06.06.18.
 //  Copyright © 2018 SE1. All rights reserved.
 //
 
 import UIKit
 
-protocol EventModelProtocol: class {
+protocol LoginModelProtocol: class {
     func itemsDownloaded(items: NSArray)
 }
 
-class EventDataModel: NSObject, URLSessionDataDelegate {
+class LoginDataModel: NSObject, URLSessionDataDelegate {
+    
+    weak var delegate: LoginModelProtocol!
 
-    //properties
-    
-    weak var delegate: EventModelProtocol!
-    
-    
-    func downloadItems(preis1: String, preis2: String, kategorie: String, umkreis: String) {
+    func loginCheck(uname: String, password: String) {
         
-        let urlPath = "http://localhost:8888/event.php?preis1=" + preis1 + "&preis2=" + preis2 + "&kategorie=" + kategorie;
+        let urlPath = "http://localhost:8888/login.php?user=" + uname + "&password=" + password;
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
         let task = defaultSession.dataTask(with: url) { (data, response, error) in
             
             if error != nil {
-               print("Failed to download data")
+                print("Failed to download data")
             }else {
                 print("Data downloaded")
                 self.parseJSON(data!)
@@ -38,7 +35,6 @@ class EventDataModel: NSObject, URLSessionDataDelegate {
         
         task.resume()
     }
-    
     func parseJSON(_ data:Data) {
         
         var jsonResult = NSArray()
@@ -59,31 +55,19 @@ class EventDataModel: NSObject, URLSessionDataDelegate {
             
             jsonElement = jsonResult[i] as! NSDictionary
             
-            let event = EventModel()
+            let login = LoginModel()
             
             //the following insures none of the JsonElement values are nil through optional binding
-            if let name = jsonElement["Name"] as? String,
-                let kategorie = jsonElement["Kategorie"] as? String,
-                let preis = jsonElement["Preis"] as? String,
-                let datum = jsonElement["Datum"] as? String,
-                let longitude = jsonElement["longitude"] as? String,
-                let latitude = jsonElement["latitude"] as? String,
-                let id = jsonElement["id"] as? String,
-                let website = jsonElement["website"] as? String
+            if let uname = jsonElement["user"] as? String,
+                let userrole = jsonElement["userrole"] as? String
             {
                 
-                event.name = name
-                event.kategorie = kategorie
-                event.preis = preis
-                event.datum = datum
-                event.latitude = latitude
-                event.longitude = longitude
-                event.id = id
-                event.website = website
+                login.uname = uname
+                login.userrole = userrole
                 
             }
             
-            events.add(event)
+            events.add(login)
             
         }
         
@@ -93,5 +77,4 @@ class EventDataModel: NSObject, URLSessionDataDelegate {
             
         })
     }
-    
 }
