@@ -11,6 +11,10 @@ import UIKit
 class TableViewController: UITableViewController, EventModelProtocol {
     //Properties
     
+    var preis1passed = ""
+    var preis2passed = ""
+    var kategoriepassed = ""
+    var umkreispassed = ""
     var feedItems: NSArray = NSArray()
     var selectedLocation : EventModel = EventModel()
     @IBOutlet weak var listTableView: UITableView!
@@ -25,7 +29,7 @@ class TableViewController: UITableViewController, EventModelProtocol {
         
         let eventDataModel = EventDataModel()
         eventDataModel.delegate = self
-        eventDataModel.downloadItems()
+        eventDataModel.downloadItems(preis1: preis1passed, preis2: preis2passed, kategorie: kategoriepassed, umkreis: umkreispassed)
         
     }
     

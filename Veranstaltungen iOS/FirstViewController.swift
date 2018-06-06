@@ -53,6 +53,14 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         }
     }
     
+    @IBAction func suchen(_ sender: Any) {
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "TableView") as! TableViewController
+        myVC.preis1passed = textPreis1.text!
+        myVC.preis2passed = textPreis2.text!
+        myVC.kategoriepassed = textKategorie.text!
+        myVC.umkreispassed = textUmkreis.text!
+        navigationController?.pushViewController(myVC, animated: true)
+    }
     func setDoneOnKeyboard() {
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()

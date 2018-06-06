@@ -93,7 +93,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="uQh-uD-ey0" kind="show" id="i8o-hi-c4r"/>
+                                            <action selector="suchen:" destination="9pv-A4-QxB" eventType="touchUpInside" id="P8q-Ab-wIr"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="siW-nP-GKJ">
@@ -299,7 +299,7 @@
         <!--Table View Controller-->
         <scene sceneID="144-Gq-eah">
             <objects>
-                <tableViewController id="uQh-uD-ey0" customClass="TableViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TableView" id="uQh-uD-ey0" customClass="TableViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="37p-Yr-Vp3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -410,7 +410,7 @@
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Straße" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9CO-RH-yFp">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Straße" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9CO-RH-yFp" userLabel="Strasse">
                                         <rect key="frame" x="7.9999999999999929" y="242" width="114.33333333333331" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -451,6 +451,7 @@
                                             <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="weiter:" destination="psw-un-a1V" eventType="touchUpInside" id="4Rs-CA-dV2"/>
                                             <segue destination="iWm-dq-4PU" kind="show" id="4ra-y2-eic"/>
                                         </connections>
                                     </button>
@@ -556,13 +557,15 @@
                         </view>
                     </navigationItem>
                     <connections>
-                        <outlet property="adresse" destination="9CO-RH-yFp" id="OOi-n3-s58"/>
                         <outlet property="beschreibung" destination="C6k-5U-no5" id="6l7-WO-N5Q"/>
                         <outlet property="bottomConstraint" destination="LSb-Ub-ufs" id="2gV-Vs-Ert"/>
                         <outlet property="datum" destination="gUn-tz-iol" id="n7P-g0-oOd"/>
+                        <outlet property="hausnummer" destination="YTk-ZI-vIM" id="esq-lF-ct3"/>
                         <outlet property="kategorie" destination="zIP-AJ-JJQ" id="bDw-Jb-6OX"/>
                         <outlet property="name" destination="c3i-iw-m3T" id="6tY-Nl-pu1"/>
+                        <outlet property="ort" destination="jHi-Qr-wlV" id="wXz-rQ-WEs"/>
                         <outlet property="preis" destination="Tbr-Hc-WmZ" id="ABN-Bp-7yY"/>
+                        <outlet property="strasse" destination="9CO-RH-yFp" id="C8I-do-tX5"/>
                         <outlet property="webiste" destination="OiF-z3-51j" id="pru-ar-yR8"/>
                     </connections>
                 </viewController>

@@ -18,10 +18,10 @@ class EventDataModel: NSObject, URLSessionDataDelegate {
     
     weak var delegate: EventModelProtocol!
     
-    let urlPath = "http://localhost:8888/event.php" //this will be changed to the path where service.php lives
     
-    func downloadItems() {
+    func downloadItems(preis1: String, preis2: String, kategorie: String, umkreis: String) {
         
+        let urlPath = "http://localhost:8888/event.php?preis1=" + preis1 + "&preis2=" + preis2 + "&kategorie=" + kategorie;
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
