@@ -341,7 +341,7 @@
                         </view>
                     </navigationItem>
                     <connections>
-                        <outlet property="eventResultsFeed" destination="37p-Yr-Vp3" id="qsm-fd-RcJ"/>
+                        <outlet property="listTableView" destination="37p-Yr-Vp3" id="Vbo-BF-42o"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDi-t6-lXT" userLabel="First Responder" sceneMemberID="firstResponder"/>
