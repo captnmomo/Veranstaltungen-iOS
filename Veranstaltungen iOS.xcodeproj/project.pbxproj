@@ -14,6 +14,9 @@
 		FA6459D420BC05F900770EE6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6459D320BC05F900770EE6 /* RegisterViewController.swift */; };
 		FA8572A020C6DA7F00455CB0 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85729F20C6DA7F00455CB0 /* EventModel.swift */; };
 		FA8572A220C6DAD300455CB0 /* EventDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572A120C6DAD300455CB0 /* EventDataModel.swift */; };
+		FA8572A420C803F400455CB0 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572A320C803F400455CB0 /* EventViewController.swift */; };
+		FA8572A620C805BA00455CB0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572A520C805BA00455CB0 /* MapViewController.swift */; };
+		FA8572A920C8070600455CB0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8572A820C8070600455CB0 /* MapKit.framework */; };
 		FAEC0C2920B592ED00674456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2820B592ED00674456 /* AppDelegate.swift */; };
 		FAEC0C2B20B592ED00674456 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2A20B592ED00674456 /* FirstViewController.swift */; };
 		FAEC0C2D20B592ED00674456 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2C20B592ED00674456 /* SecondViewController.swift */; };
@@ -49,6 +52,9 @@
 		FA6459D320BC05F900770EE6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FA85729F20C6DA7F00455CB0 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		FA8572A120C6DAD300455CB0 /* EventDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataModel.swift; sourceTree = "<group>"; };
+		FA8572A320C803F400455CB0 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		FA8572A520C805BA00455CB0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FA8572A820C8070600455CB0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FAEC0C2520B592ED00674456 /* Veranstaltungen iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Veranstaltungen iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEC0C2820B592ED00674456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAEC0C2A20B592ED00674456 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8572A920C8070600455CB0 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA8572A720C8070600455CB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA8572A820C8070600455CB0 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FAEC0C1C20B592ED00674456 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +112,7 @@
 				FAEC0C3E20B592EE00674456 /* Veranstaltungen iOSTests */,
 				FAEC0C4920B592EE00674456 /* Veranstaltungen iOSUITests */,
 				FAEC0C2620B592ED00674456 /* Products */,
+				FA8572A720C8070600455CB0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +143,8 @@
 				FA6459D320BC05F900770EE6 /* RegisterViewController.swift */,
 				FA85729F20C6DA7F00455CB0 /* EventModel.swift */,
 				FA8572A120C6DAD300455CB0 /* EventDataModel.swift */,
+				FA8572A320C803F400455CB0 /* EventViewController.swift */,
+				FA8572A520C805BA00455CB0 /* MapViewController.swift */,
 			);
 			path = "Veranstaltungen iOS";
 			sourceTree = "<group>";
@@ -281,11 +299,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6459D220BC05E400770EE6 /* LoginViewController.swift in Sources */,
+				FA8572A420C803F400455CB0 /* EventViewController.swift in Sources */,
 				FAEC0C2D20B592ED00674456 /* SecondViewController.swift in Sources */,
 				FA6459D020BB2A0500770EE6 /* ErstellenViewController.swift in Sources */,
 				FA6459D420BC05F900770EE6 /* RegisterViewController.swift in Sources */,
 				FA8572A020C6DA7F00455CB0 /* EventModel.swift in Sources */,
 				FA1CFA6520BB24DD0061B548 /* PhotoUploadViewController.swift in Sources */,
+				FA8572A620C805BA00455CB0 /* MapViewController.swift in Sources */,
 				FAEC0C2920B592ED00674456 /* AppDelegate.swift in Sources */,
 				FA8572A220C6DAD300455CB0 /* EventDataModel.swift in Sources */,
 				FAEC0C2B20B592ED00674456 /* FirstViewController.swift in Sources */,

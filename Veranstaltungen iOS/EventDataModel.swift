@@ -65,13 +65,17 @@ class EventDataModel: NSObject, URLSessionDataDelegate {
             if let name = jsonElement["Name"] as? String,
                 let kategorie = jsonElement["Kategorie"] as? String,
                 let preis = jsonElement["Preis"] as? String,
-                let datum = jsonElement["Datum"] as? String
+                let datum = jsonElement["Datum"] as? String,
+                let longitude = jsonElement["longitude"] as? String,
+                let latitude = jsonElement["latitude"] as? String
             {
                 
                 event.name = name
                 event.kategorie = kategorie
                 event.preis = preis
                 event.datum = datum
+                event.latitude = latitude
+                event.longitude = longitude
                 
             }
             
