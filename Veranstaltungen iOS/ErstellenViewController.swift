@@ -10,9 +10,82 @@ import UIKit
 
 class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    let defaultValues = UserDefaults.standard
+    
 
     @IBAction func weiter(_ sender: Any) {
+        
+         if(name.text?.isEmpty == false && kategorie.text?.isEmpty == false && preis.text?.isEmpty == false && datum.text?.isEmpty == false && strasse.text?.isEmpty == false && webiste.text?.isEmpty == false && beschreibung.text?.isEmpty == false && hausnummer.text?.isEmpty == false && ort.text?.isEmpty == false){
+            let myVC = storyboard?.instantiateViewController(withIdentifier: "photoView") as! PhotoUploadViewController
+            myVC.namePassed = name.text!
+            myVC.kategoriePassed = kategorie.text!
+            myVC.preisPassed = preis.text!
+            myVC.datumPassed = datum.text!
+            myVC.strassePassed = strasse.text!
+            myVC.hausnummerPassed = hausnummer.text!
+            myVC.ortPassed = ort.text!
+            myVC.websitePassed = webiste.text!
+            myVC.beschreibungPassed = beschreibung.text!
+            
+            let strasseURL = strasse.text!
+            let hausnummerURL = hausnummer.text!
+            let ortURL = ort.text!
+            
+            let strasseCorrect = strasseURL.folding(options: .diacriticInsensitive, locale: .current)
+            let strasseSS = strasseCorrect.uppercased(with: .current)
+            let strassess = strasseSS.lowercased(with: .current)
+            let ortCorrect = ortURL.folding(options: .diacriticInsensitive, locale: .current)
+            
+            let urlPath = "https://maps.googleapis.com/maps/api/geocode/json?address=" + strassess + "%20" + hausnummerURL + ",%20" + ortCorrect + "&key=AIzaSyCi9HwD2zrfPCgZ-ILzfdISlGeGr0pfMfU";
+            print(urlPath)
+            let url: URL = URL(string: urlPath)!
+            let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+            
+            let task = defaultSession.dataTask(with: url) { (data, response, error) in
+                
+                if error != nil {
+                    print("Failed to download data")
+                }else {
+                    print("Data downloaded")
+                    self.parseJSON(data!)
+                }
+                
+            }
+            
+            task.resume()
+            
+        }
     }
+    
+    
+    func parseJSON(_ data:Data) {
+        
+        var jsonResult = NSDictionary()
+        
+        do{
+            jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+            
+        } catch let error as NSError {
+            print(error)
+            
+        }
+        
+            
+            //the following insures none of the JsonElement values are nil through optional binding
+        if let jsonElement = jsonResult["results"] as? NSArray{
+            if let jsonElementi = jsonElement[0] as? NSDictionary{
+                if let geometry = jsonElementi["geometry"] as? NSDictionary {
+                    if let location = geometry["location"] as? NSDictionary {
+                        let myVC = storyboard?.instantiateViewController(withIdentifier: "photoView") as! PhotoUploadViewController
+                        myVC.latitude = location["lat"] as! NSNumber
+                        myVC.longitude = location["lng"] as! NSNumber
+                        print("\n\(myVC.latitude), \(myVC.longitude)")
+                }
+            }
+    }
+        }
+}
+
     @IBOutlet weak var ort: UITextField!
     @IBOutlet weak var hausnummer: UITextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
@@ -87,6 +160,13 @@ class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     override func viewDidLoad() {
+        
+        if defaultValues.string(forKey: "username") != nil{
+            
+        }else{
+           let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "MoreViewController") as! MoreViewController
+            self.navigationController?.pushViewController(moreViewController, animated: true)
+        }
         
         let pickerKategorie = UIPickerView()
         

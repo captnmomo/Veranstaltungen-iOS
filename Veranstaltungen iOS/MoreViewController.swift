@@ -23,6 +23,9 @@ class MoreViewController: UIViewController {
         }
     }
     override func viewDidLoad() {
+        
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
+        navigationItem.leftBarButtonItem = backButton
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
