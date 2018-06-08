@@ -20,6 +20,7 @@ class EventModel: NSObject {
     var longitude: String?
     var id: String?
     var website: String?
+    var beschreibung: String?
     
     
     //empty constructor
@@ -31,7 +32,7 @@ class EventModel: NSObject {
     
     //construct with @name, @address, @latitude, and @longitude parameters
     
-    init(name: String, kategorie: String, preis: String, datum: String, latitude: String, longitude: String, id: String, website: String) {
+    init(name: String, kategorie: String, preis: String, datum: String, latitude: String, longitude: String, id: String, website: String, beschreibung: String) {
         
         self.name = name
         self.kategorie = kategorie
@@ -41,6 +42,7 @@ class EventModel: NSObject {
         self.longitude = longitude
         self.id = id
         self.website = website
+        self.beschreibung = beschreibung
         
     }
     

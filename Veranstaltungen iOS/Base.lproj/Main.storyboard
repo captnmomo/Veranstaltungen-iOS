@@ -671,7 +671,6 @@
                                         </state>
                                         <connections>
                                             <action selector="weiter:" destination="psw-un-a1V" eventType="touchUpInside" id="4Rs-CA-dV2"/>
-                                            <segue destination="iWm-dq-4PU" kind="show" id="4ra-y2-eic"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J58-qI-5so">
@@ -801,7 +800,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ptj-8r-jOA">
-                                <rect key="frame" x="16" y="173" width="145.66666666666666" height="30"/>
+                                <rect key="frame" x="16" y="129" width="145.66666666666666" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.97306179656324354" blue="0.95286196412990476" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CCQ-1R-6R9"/>
@@ -814,7 +813,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opd-yo-QMy">
-                                <rect key="frame" x="213.66666666666663" y="173" width="145.33333333333337" height="30"/>
+                                <rect key="frame" x="213.66666666666663" y="129" width="145.33333333333337" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.97306179656324354" blue="0.95286196412990476" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bTh-iC-iPH"/>
@@ -824,7 +823,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laden Sie ein Titelbild hoch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypb-B8-05k">
-                                <rect key="frame" x="59" y="113" width="257" height="24"/>
+                                <rect key="frame" x="59" y="69" width="257" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.97306179656324354" blue="0.95286196412990476" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -838,14 +837,13 @@
                                 </state>
                                 <connections>
                                     <action selector="upload:" destination="iWm-dq-4PU" eventType="touchUpInside" id="MDf-EG-LZJ"/>
-                                    <segue destination="ARB-yN-nRM" kind="show" id="1cj-1k-U67"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="J41-If-aek">
-                                <rect key="frame" x="177.66666666666666" y="178" width="20" height="20"/>
+                                <rect key="frame" x="177.66666666666666" y="134" width="20" height="20"/>
                             </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p2C-WO-B3a">
-                                <rect key="frame" x="16" y="245" width="343" height="240"/>
+                                <rect key="frame" x="16" y="201" width="343" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="cLf-gI-II9"/>
                                 </constraints>
@@ -921,7 +919,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bux-7W-LDQ">
-                                <rect key="frame" x="16" y="677" width="343" height="30"/>
+                                <rect key="frame" x="16" y="726" width="343" height="30"/>
                                 <color key="backgroundColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Fertig">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

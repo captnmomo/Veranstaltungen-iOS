@@ -57,6 +57,7 @@ class EventViewController: UIViewController {
         websiteField.contentInset = UIEdgeInsetsMake(-6.0,0.0,0,0.0)
         websiteField.dataDetectorTypes = UIDataDetectorTypes.all
         websiteField.text = selectedLocation!.website!
+        beschreibungField.text = selectedLocation!.beschreibung!
         
         if let url = URL(string: "http://localhost:8888/getImage.php?id=" + selectedLocation!.id!) {
             Bild.contentMode = .scaleAspectFit

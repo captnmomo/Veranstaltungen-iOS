@@ -11,6 +11,8 @@ import UIKit
 class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let defaultValues = UserDefaults.standard
+    var latitudeString = String()
+    var longitudeString = String()
     
 
     @IBAction func weiter(_ sender: Any) {
@@ -27,64 +29,12 @@ class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             myVC.websitePassed = webiste.text!
             myVC.beschreibungPassed = beschreibung.text!
             
-            let strasseURL = strasse.text!
-            let hausnummerURL = hausnummer.text!
-            let ortURL = ort.text!
+            print(myVC.namePassed)
             
-            let strasseCorrect = strasseURL.folding(options: .diacriticInsensitive, locale: .current)
-            let strasseSS = strasseCorrect.uppercased(with: .current)
-            let strassess = strasseSS.lowercased(with: .current)
-            let ortCorrect = ortURL.folding(options: .diacriticInsensitive, locale: .current)
             
-            let urlPath = "https://maps.googleapis.com/maps/api/geocode/json?address=" + strassess + "%20" + hausnummerURL + ",%20" + ortCorrect + "&key=AIzaSyCi9HwD2zrfPCgZ-ILzfdISlGeGr0pfMfU";
-            print(urlPath)
-            let url: URL = URL(string: urlPath)!
-            let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
-            
-            let task = defaultSession.dataTask(with: url) { (data, response, error) in
-                
-                if error != nil {
-                    print("Failed to download data")
-                }else {
-                    print("Data downloaded")
-                    self.parseJSON(data!)
-                }
-                
-            }
-            
-            task.resume()
-            
+             navigationController?.pushViewController(myVC, animated: true)
         }
     }
-    
-    
-    func parseJSON(_ data:Data) {
-        
-        var jsonResult = NSDictionary()
-        
-        do{
-            jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-            
-        } catch let error as NSError {
-            print(error)
-            
-        }
-        
-            
-            //the following insures none of the JsonElement values are nil through optional binding
-        if let jsonElement = jsonResult["results"] as? NSArray{
-            if let jsonElementi = jsonElement[0] as? NSDictionary{
-                if let geometry = jsonElementi["geometry"] as? NSDictionary {
-                    if let location = geometry["location"] as? NSDictionary {
-                        let myVC = storyboard?.instantiateViewController(withIdentifier: "photoView") as! PhotoUploadViewController
-                        myVC.latitude = location["lat"] as! NSNumber
-                        myVC.longitude = location["lng"] as! NSNumber
-                        print("\n\(myVC.latitude), \(myVC.longitude)")
-                }
-            }
-    }
-        }
-}
 
     @IBOutlet weak var ort: UITextField!
     @IBOutlet weak var hausnummer: UITextField!

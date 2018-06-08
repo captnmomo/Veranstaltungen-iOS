@@ -62,15 +62,36 @@ class EventDataModel: NSObject, URLSessionDataDelegate {
             let event = EventModel()
             
             //the following insures none of the JsonElement values are nil through optional binding
-            if let name = jsonElement["Name"] as? String,
+            if var name = jsonElement["Name"] as? String,
                 let kategorie = jsonElement["Kategorie"] as? String,
                 let preis = jsonElement["Preis"] as? String,
                 let datum = jsonElement["Datum"] as? String,
                 let longitude = jsonElement["longitude"] as? String,
                 let latitude = jsonElement["latitude"] as? String,
                 let id = jsonElement["id"] as? String,
-                let website = jsonElement["website"] as? String
+                var website = jsonElement["website"] as? String,
+                var beschreibung = jsonElement["Text"] as? String
             {
+                name = name.replacingOccurrences(of: "ae", with: "ä")
+                name = name.replacingOccurrences(of: "oe", with: "ö")
+                name = name.replacingOccurrences(of: "ue", with: "ü")
+                name = name.replacingOccurrences(of: "Ae", with: "Ä")
+                name = name.replacingOccurrences(of: "Oe", with: "Ö")
+                name = name.replacingOccurrences(of: "Ue", with: "Ü")
+                
+                beschreibung = beschreibung.replacingOccurrences(of: "ae", with: "ä")
+                beschreibung = beschreibung.replacingOccurrences(of: "oe", with: "ö")
+                beschreibung = beschreibung.replacingOccurrences(of: "ue", with: "ü")
+                beschreibung = beschreibung.replacingOccurrences(of: "Ae", with: "Ä")
+                beschreibung = beschreibung.replacingOccurrences(of: "Oe", with: "Ö")
+                beschreibung = beschreibung.replacingOccurrences(of: "Ue", with: "Ü")
+                
+                website = website.replacingOccurrences(of: "ae", with: "ä")
+                website = website.replacingOccurrences(of: "oe", with: "ö")
+                website = website.replacingOccurrences(of: "ue", with: "ü")
+                website = website.replacingOccurrences(of: "Ae", with: "Ä")
+                website = website.replacingOccurrences(of: "Oe", with: "Ö")
+                website = website.replacingOccurrences(of: "Ue", with: "Ü")
                 
                 event.name = name
                 event.kategorie = kategorie
@@ -80,6 +101,7 @@ class EventDataModel: NSObject, URLSessionDataDelegate {
                 event.longitude = longitude
                 event.id = id
                 event.website = website
+                event.beschreibung = beschreibung
                 
             }
             
