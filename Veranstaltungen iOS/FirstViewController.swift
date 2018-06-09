@@ -120,6 +120,7 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         self.searchedTableView.delegate = self
         self.searchedTableView.dataSource = self
         
+        
         searchedTableView.reloadData()
         
         
@@ -150,7 +151,9 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         let cellIdentifier: String = "searchedCell"
         let myCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)!
         // Get the location to be shown
-        let countString = String(indexPath.row)
+        let arrayInteger = defaultValues.integer(forKey: "testzahl")
+        let countRow = arrayInteger - indexPath.row - 1
+        let countString = String(countRow)
         let arraystring = "Array" + countString
         print(arraystring)
         let readArray = defaultValues.value(forKey: arraystring)! as! NSDictionary

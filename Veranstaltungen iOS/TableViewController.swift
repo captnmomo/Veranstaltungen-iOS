@@ -11,6 +11,7 @@ import UIKit
 class TableViewController: UITableViewController, EventModelProtocol {
     //Properties
     
+    @IBOutlet weak var kategorieLabel: UILabel!
     var preis1passed = ""
     var preis2passed = ""
     var kategoriepassed = ""
@@ -26,6 +27,8 @@ class TableViewController: UITableViewController, EventModelProtocol {
         
         self.listTableView.delegate = self
         self.listTableView.dataSource = self
+        
+        kategorieLabel.text = kategoriepassed
         
         let eventDataModel = EventDataModel()
         eventDataModel.delegate = self
