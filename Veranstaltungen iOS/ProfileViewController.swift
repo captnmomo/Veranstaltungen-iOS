@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
     }
 
     @IBAction func Logout(_ sender: Any) {
-        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        UserDefaults.standard.removeObject(forKey: "username")
         UserDefaults.standard.synchronize()
         
         //switching to login screen

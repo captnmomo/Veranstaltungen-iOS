@@ -33,6 +33,12 @@ class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             
             
              navigationController?.pushViewController(myVC, animated: true)
+         }else{
+            let alert = UIAlertController(title: "Fehler!", message: "Bitte füllen Sie alle Felder aus!", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
         }
     }
 
@@ -111,12 +117,6 @@ class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     override func viewDidLoad() {
         
-        if defaultValues.string(forKey: "username") != nil{
-            
-        }else{
-           let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "MoreViewController") as! MoreViewController
-            self.navigationController?.pushViewController(moreViewController, animated: true)
-        }
         
         let pickerKategorie = UIPickerView()
         
@@ -136,6 +136,30 @@ class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if defaultValues.string(forKey: "username") != nil{
+            
+        }else{
+            let tabBarController: UITabBarController?
+            
+            self.tabBarController?.selectedIndex = 3;
+            let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "MoreViewController") as! MoreViewController
+            self.navigationController?.pushViewController(moreViewController, animated: true)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if defaultValues.string(forKey: "username") != nil{
+            
+        }else{
+            let tabBarController: UITabBarController?
+            
+            self.tabBarController?.selectedIndex = 3;
+            let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "MoreViewController") as! MoreViewController
+            self.navigationController?.pushViewController(moreViewController, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {

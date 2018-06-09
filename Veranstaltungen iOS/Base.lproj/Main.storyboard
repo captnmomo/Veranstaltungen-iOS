@@ -1129,6 +1129,17 @@
                                     <segue destination="WKT-nW-9mA" kind="show" id="aOb-bb-BVh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfi-1b-9mc">
+                                <rect key="frame" x="0.0" y="331" width="375" height="80"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButton:" destination="D2S-jH-6jv" eventType="touchUpInside" id="mDL-NE-cDV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.32156862745098042" green="0.32156862745098042" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1137,10 +1148,14 @@
                             <constraint firstItem="RKy-X7-F7D" firstAttribute="top" secondItem="fXK-y7-P9L" secondAttribute="bottom" constant="1" id="C6l-v4-VvK"/>
                             <constraint firstItem="NEa-2m-MbO" firstAttribute="leading" secondItem="xS6-6F-3nV" secondAttribute="leading" id="Ql3-wM-Bpn"/>
                             <constraint firstItem="RKy-X7-F7D" firstAttribute="leading" secondItem="xS6-6F-3nV" secondAttribute="leading" id="SVc-YK-eVU"/>
+                            <constraint firstItem="Tfi-1b-9mc" firstAttribute="top" secondItem="RKy-X7-F7D" secondAttribute="bottom" constant="1" id="THB-TF-CqK"/>
                             <constraint firstItem="fXK-y7-P9L" firstAttribute="trailing" secondItem="xS6-6F-3nV" secondAttribute="trailing" id="YJP-YG-FPs"/>
                             <constraint firstItem="fXK-y7-P9L" firstAttribute="leading" secondItem="xS6-6F-3nV" secondAttribute="leading" id="acK-Vc-6HR"/>
+                            <constraint firstItem="Tfi-1b-9mc" firstAttribute="height" secondItem="RKy-X7-F7D" secondAttribute="height" id="f2d-EA-5cU"/>
+                            <constraint firstItem="Tfi-1b-9mc" firstAttribute="leading" secondItem="xS6-6F-3nV" secondAttribute="leading" id="has-1W-P6E"/>
                             <constraint firstItem="NEa-2m-MbO" firstAttribute="top" secondItem="xS6-6F-3nV" secondAttribute="top" id="kyA-vv-yq8"/>
                             <constraint firstItem="NEa-2m-MbO" firstAttribute="trailing" secondItem="xS6-6F-3nV" secondAttribute="trailing" id="ujb-Tq-IXP"/>
+                            <constraint firstItem="xS6-6F-3nV" firstAttribute="trailing" secondItem="Tfi-1b-9mc" secondAttribute="trailing" id="wGY-jb-JKy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xS6-6F-3nV"/>
                     </view>

@@ -32,6 +32,7 @@ class TableViewController: UITableViewController, EventModelProtocol {
         
         let eventDataModel = EventDataModel()
         eventDataModel.delegate = self
+        print("Umkreis: " + umkreispassed)
         eventDataModel.downloadItems(preis1: preis1passed, preis2: preis2passed, kategorie: kategoriepassed, umkreis: umkreispassed)
         
     }

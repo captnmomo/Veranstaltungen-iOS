@@ -20,8 +20,9 @@ extension UIViewController {
 }
 
 import UIKit
+import CoreLocation
 
-class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
+class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     let defaultValues = UserDefaults.standard
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -56,6 +57,13 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     @IBAction func suchen(_ sender: Any) {
+        if textPreis1.text!.isEmpty == true && textPreis2.text!.isEmpty == true && textKategorie.text!.isEmpty == true && textUmkreis.text!.isEmpty == true {
+            let alert = UIAlertController(title: "Fehler!", message: "Bitte füllen Sie alle Felder aus!", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        }else{
         let myVC = storyboard?.instantiateViewController(withIdentifier: "TableView") as! TableViewController
         myVC.preis1passed = textPreis1.text!
         myVC.preis2passed = textPreis2.text!
@@ -74,6 +82,7 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             defaultValues.set(array,forKey: DefaultString)
         }
         navigationController?.pushViewController(myVC, animated: true)
+        }
     }
     func setDoneOnKeyboard() {
         let keyboardToolbar = UIToolbar()
@@ -96,6 +105,7 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var searchedTableView: UITableView!
     let kategoriePickerData = [String](arrayLiteral: "Party", "Natur", "Familie", "Jugend")
     let umkreisPickerData = [String](arrayLiteral: "10km", "30km", "50km", "100km", ">100km")
+    let locationManager = CLLocationManager()
     @IBOutlet weak var textKategorie: UITextField!
     @IBOutlet weak var textUmkreis: UITextField!
     @IBOutlet weak var textPreis1: UITextField!
@@ -120,9 +130,11 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         self.searchedTableView.delegate = self
         self.searchedTableView.dataSource = self
         
-        
         searchedTableView.reloadData()
         
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -169,7 +181,9 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let countString = String(indexPath.row)
+        let arrayInteger = defaultValues.integer(forKey: "testzahl")
+        let countRow = arrayInteger - indexPath.row - 1
+        let countString = String(countRow)
         let arraystring = "Array" + countString
         let readArray = defaultValues.value(forKey: arraystring)! as! NSDictionary
         let myVC = storyboard?.instantiateViewController(withIdentifier: "TableView") as! TableViewController
@@ -178,6 +192,12 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         myVC.kategoriepassed = (readArray["Kategorie"] as? String)!
         myVC.umkreispassed = (readArray["Umkreis"] as? String)!
         navigationController?.pushViewController(myVC, animated: true)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        defaultValues.set(location.coordinate.latitude, forKey: "latitude")
+        defaultValues.set(location.coordinate.longitude, forKey: "longitude")
     }
     }
 

@@ -51,6 +51,7 @@
 /* Begin PBXFileReference section */
 		FA07360020BAB5EC00CE409E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		FA1CFA6420BB24DD0061B548 /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
+		FA25C7EC20CBFE95009B700F /* MyOffice.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = MyOffice.gpx; path = ../../../MyOffice.gpx; sourceTree = "<group>"; };
 		FA6459CF20BB2A0500770EE6 /* ErstellenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErstellenViewController.swift; sourceTree = "<group>"; };
 		FA6459D120BC05E400770EE6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA6459D320BC05F900770EE6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		FAEC0C1C20B592ED00674456 = {
 			isa = PBXGroup;
 			children = (
+				FA25C7EC20CBFE95009B700F /* MyOffice.gpx */,
 				FAEC0C2720B592ED00674456 /* Veranstaltungen iOS */,
 				FAEC0C3E20B592EE00674456 /* Veranstaltungen iOSTests */,
 				FAEC0C4920B592EE00674456 /* Veranstaltungen iOSUITests */,

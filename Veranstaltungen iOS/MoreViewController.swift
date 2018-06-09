@@ -22,10 +22,27 @@ class MoreViewController: UIViewController {
             self.navigationController?.pushViewController(loginViewController, animated: true)
         }
     }
+    
+    
+    @IBAction func resetButton(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "testzahl")
+        UserDefaults.standard.removeObject(forKey: "username")
+        
+        let alert = UIAlertController(title: "Done", message: "Alle Daten wurden gelöscht", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
     override func viewDidLoad() {
         
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton
+        
+        let tabBarController: UITabBarController?
+        
+        self.tabBarController?.selectedIndex = 3;
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
