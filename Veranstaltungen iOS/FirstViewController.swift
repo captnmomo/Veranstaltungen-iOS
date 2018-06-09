@@ -140,6 +140,13 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        textKategorie.text = ""
+        textPreis1.text = ""
+        textPreis2.text = ""
+        textUmkreis.text = ""
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         searchedTableView.reloadData()

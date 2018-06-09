@@ -65,6 +65,13 @@ class EventViewController: UIViewController {
         }
         
         super.viewDidLoad()
+        
+        let userRole = "admin"
+        
+        if UserDefaults.standard.string(forKey: "userrole") == userRole {
+            let moreButton = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(deleteEvent))
+            navigationItem.rightBarButtonItem = moreButton
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -73,6 +80,32 @@ class EventViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @objc func deleteEvent() {
+        
+        let URL_DELETE = "http://localhost:8888/delete.php?id=" + selectedLocation!.id!;
+        print(URL_DELETE)
+        let url: URL = URL(string: URL_DELETE)!
+        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+        
+        let task = defaultSession.dataTask(with: url) { (data, response, error) in
+            
+            if error != nil {
+                print("Failed to download data")
+            }else {
+                print("Event deleted")
+                DispatchQueue.main.async{
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+                
+                
+            }
+            
+        }
+        
+        task.resume()
+    }
+    
     
 
     /*

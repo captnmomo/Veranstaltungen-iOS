@@ -100,7 +100,7 @@ class PhotoUploadViewController: UIViewController, UIImagePickerControllerDelega
     }
     @IBAction func upload(_ sender: Any) {
         
-        let img:UIImage = ImageView.image!
+        if ImageView.image != nil {
         
         let todo: String =  "http://localhost:8888/upload.php"
         
@@ -161,6 +161,15 @@ class PhotoUploadViewController: UIViewController, UIImagePickerControllerDelega
         }
         
         task.resume()
+        } else {
+            let alert = UIAlertController(title: "Fehler!", message: "Bitte laden Sie ein Foto hoch!", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+        
+        
     }
     
     func parseJSON(_ data:Data) {
@@ -187,6 +196,13 @@ class PhotoUploadViewController: UIViewController, UIImagePickerControllerDelega
         //the following insures none of the JsonElement values are nil through optional binding
         if let message = jsonElement["message"] as? String{
             print("message: " + message)
+            
+            DispatchQueue.main.async{
+                let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "doneView") as! DoneViewController
+                self.navigationController?.pushViewController(profileViewController, animated: true)
+                
+                self.dismiss(animated: false, completion: nil)
+            }
     }
     
     }

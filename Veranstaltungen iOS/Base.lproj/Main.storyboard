@@ -690,6 +690,7 @@
                                     <constraint firstItem="OiF-z3-51j" firstAttribute="top" secondItem="yAx-mo-Q3w" secondAttribute="bottom" constant="1" id="drq-Ai-e44"/>
                                     <constraint firstItem="jHi-Qr-wlV" firstAttribute="centerY" secondItem="9CO-RH-yFp" secondAttribute="centerY" id="efj-fm-aaI"/>
                                     <constraint firstItem="SM5-BW-nc8" firstAttribute="top" secondItem="c3i-iw-m3T" secondAttribute="bottom" constant="1" id="fNS-SD-Dix"/>
+                                    <constraint firstAttribute="bottom" secondItem="C6k-5U-no5" secondAttribute="bottom" constant="42" id="gJW-y5-jrQ"/>
                                     <constraint firstAttribute="trailing" secondItem="C6k-5U-no5" secondAttribute="trailing" constant="8" id="gOC-WL-reb"/>
                                     <constraint firstItem="gUn-tz-iol" firstAttribute="leading" secondItem="HZq-GD-8WJ" secondAttribute="leading" constant="8" id="kYu-8s-Ww6"/>
                                     <constraint firstItem="Dp9-7T-MBd" firstAttribute="leading" secondItem="iwx-N2-6KB" secondAttribute="leading" id="qTq-uN-sJz"/>
@@ -737,6 +738,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="beschreibung" destination="C6k-5U-no5" id="6l7-WO-N5Q"/>
+                        <outlet property="bottomBeschreibung" destination="gJW-y5-jrQ" id="kqx-qo-tkQ"/>
                         <outlet property="bottomConstraint" destination="LSb-Ub-ufs" id="2gV-Vs-Ert"/>
                         <outlet property="datum" destination="gUn-tz-iol" id="n7P-g0-oOd"/>
                         <outlet property="hausnummer" destination="YTk-ZI-vIM" id="esq-lF-ct3"/>
@@ -761,7 +763,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ptj-8r-jOA">
-                                <rect key="frame" x="16" y="129" width="145.66666666666666" height="30"/>
+                                <rect key="frame" x="16" y="129" width="343" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.97306179656324354" blue="0.95286196412990476" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CCQ-1R-6R9"/>
@@ -772,16 +774,6 @@
                                 <connections>
                                     <action selector="picker:" destination="iWm-dq-4PU" eventType="touchUpInside" id="QL6-XN-4fo"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opd-yo-QMy">
-                                <rect key="frame" x="213.66666666666663" y="129" width="145.33333333333337" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.97306179656324354" blue="0.95286196412990476" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="bTh-iC-iPH"/>
-                                </constraints>
-                                <state key="normal" title="Foto hochladen">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laden Sie ein Titelbild hoch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypb-B8-05k">
                                 <rect key="frame" x="59" y="69" width="257" height="24"/>
@@ -800,9 +792,6 @@
                                     <action selector="upload:" destination="iWm-dq-4PU" eventType="touchUpInside" id="MDf-EG-LZJ"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="J41-If-aek">
-                                <rect key="frame" x="177.66666666666666" y="134" width="20" height="20"/>
-                            </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p2C-WO-B3a">
                                 <rect key="frame" x="16" y="201" width="343" height="240"/>
                                 <constraints>
@@ -812,19 +801,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="opd-yo-QMy" firstAttribute="leading" secondItem="J41-If-aek" secondAttribute="trailing" constant="16" id="02A-dN-1G2"/>
+                            <constraint firstItem="1k2-K0-9oP" firstAttribute="trailing" secondItem="Ptj-8r-jOA" secondAttribute="trailing" constant="16" id="0EH-Hb-lEd"/>
                             <constraint firstItem="Ptj-8r-jOA" firstAttribute="leading" secondItem="1k2-K0-9oP" secondAttribute="leading" constant="16" id="4u4-zs-e5i"/>
                             <constraint firstItem="Ptj-8r-jOA" firstAttribute="top" secondItem="1k2-K0-9oP" secondAttribute="top" constant="85" id="56W-uz-4pL"/>
                             <constraint firstItem="Ypb-B8-05k" firstAttribute="centerX" secondItem="SoB-0I-bx7" secondAttribute="centerX" id="8xl-1r-fF7"/>
                             <constraint firstItem="p2C-WO-B3a" firstAttribute="centerX" secondItem="SoB-0I-bx7" secondAttribute="centerX" id="DX3-I8-S3H"/>
                             <constraint firstItem="p2C-WO-B3a" firstAttribute="top" secondItem="Ptj-8r-jOA" secondAttribute="bottom" constant="42" id="ELd-w6-fOJ"/>
-                            <constraint firstItem="opd-yo-QMy" firstAttribute="top" secondItem="1k2-K0-9oP" secondAttribute="top" constant="85" id="GIk-8v-6YX"/>
-                            <constraint firstItem="Ptj-8r-jOA" firstAttribute="width" secondItem="opd-yo-QMy" secondAttribute="width" id="PXc-c1-AjJ"/>
                             <constraint firstItem="Ypb-B8-05k" firstAttribute="top" secondItem="1k2-K0-9oP" secondAttribute="top" constant="25" id="TSK-HG-0hx"/>
                             <constraint firstItem="p2C-WO-B3a" firstAttribute="centerX" secondItem="SoB-0I-bx7" secondAttribute="centerX" id="dfu-3f-eMB"/>
-                            <constraint firstItem="J41-If-aek" firstAttribute="centerY" secondItem="Ptj-8r-jOA" secondAttribute="centerY" id="fEn-ok-5YL"/>
-                            <constraint firstItem="1k2-K0-9oP" firstAttribute="trailing" secondItem="opd-yo-QMy" secondAttribute="trailing" constant="16" id="ozj-aj-UeT"/>
-                            <constraint firstItem="J41-If-aek" firstAttribute="leading" secondItem="Ptj-8r-jOA" secondAttribute="trailing" constant="16" id="vE0-IT-Wmn"/>
                             <constraint firstItem="p2C-WO-B3a" firstAttribute="leading" secondItem="1k2-K0-9oP" secondAttribute="leading" constant="16" id="zX9-fF-Eo9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1k2-K0-9oP"/>
@@ -852,17 +836,16 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ImageView" destination="p2C-WO-B3a" id="e3Y-sf-O2F"/>
-                        <outlet property="myActivityIndicator" destination="J41-If-aek" id="cJh-H0-BLD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77v-PN-lLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2832.8000000000002" y="1087.6847290640394"/>
         </scene>
-        <!--View Controller-->
+        <!--Done View Controller-->
         <scene sceneID="ier-Xn-GEN">
             <objects>
-                <viewController storyboardIdentifier="doneView" id="ARB-yN-nRM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="doneView" id="ARB-yN-nRM" customClass="DoneViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bNM-n6-45W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -885,6 +868,9 @@
                                 <state key="normal" title="Fertig">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneButton:" destination="ARB-yN-nRM" eventType="touchUpInside" id="FEG-pY-mNV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
