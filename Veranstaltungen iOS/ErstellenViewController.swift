@@ -174,9 +174,18 @@ class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             
         }else{
             
-            self.tabBarController?.selectedIndex = 3;
-            let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "MoreViewController") as! MoreViewController
-            self.navigationController?.pushViewController(moreViewController, animated: true)
+            let alert = UIAlertController(title: "Fehler!", message: "Bitte loggen Sie sich erst ein!", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Einloggen", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                self.tabBarController?.selectedIndex = 3;
+                let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "MoreViewController") as! MoreViewController
+                self.navigationController?.pushViewController(moreViewController, animated: true)
+            }
+            
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true)
         }
         
         name.text = ""
@@ -195,9 +204,18 @@ class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             
         }else{
             
-            self.tabBarController?.selectedIndex = 3;
-            let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "MoreViewController") as! MoreViewController
-            self.navigationController?.pushViewController(moreViewController, animated: true)
+            let alert = UIAlertController(title: "Fehler!", message: "Bitte loggen Sie sich erst ein!", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Einloggen", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                self.tabBarController?.selectedIndex = 3;
+                let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "MoreViewController") as! MoreViewController
+                self.navigationController?.pushViewController(moreViewController, animated: true)
+            }
+            
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true)
         }
     }
 

@@ -21,18 +21,33 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        // Create coordinates from location lat/long
+    
+    @IBAction func navigationEvent(_ sender: Any) {
         var poiCoodinates: CLLocationCoordinate2D = CLLocationCoordinate2D()
         
         poiCoodinates.latitude = CDouble(self.selectedLocation!.latitude!)!
         poiCoodinates.longitude = CDouble(self.selectedLocation!.longitude!)!
         // Zoom to region
         let viewRegion: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(poiCoodinates, 750, 750)
+        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: viewRegion.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: viewRegion.span)]
+        let placemark = MKPlacemark(coordinate: poiCoodinates)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = selectedLocation!.name!
+        mapItem.openInMaps(launchOptions: options)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        var poiCoodinates: CLLocationCoordinate2D = CLLocationCoordinate2D()
+        
+        poiCoodinates.latitude = CDouble(self.selectedLocation!.latitude!)!
+        poiCoodinates.longitude = CDouble(self.selectedLocation!.longitude!)!
+        // Zoom to region
+        let viewRegion: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(poiCoodinates, 750, 750)
+        // Create coordinates from location lat/long
         self.Map.setRegion(viewRegion, animated: true)
         // Plot pin
         let pin: MKPointAnnotation = MKPointAnnotation()
         pin.coordinate = poiCoodinates
+        //pin.title =
         self.Map.addAnnotation(pin)
         
         //add title to the pin

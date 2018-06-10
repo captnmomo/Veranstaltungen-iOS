@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA07360120BAB5EC00CE409E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07360020BAB5EC00CE409E /* TableViewController.swift */; };
+		FA0FE35F20CD4BF7005E04A6 /* KategorieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FE35E20CD4BF7005E04A6 /* KategorieViewController.swift */; };
 		FA1CFA6520BB24DD0061B548 /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CFA6420BB24DD0061B548 /* PhotoUploadViewController.swift */; };
 		FA25C7EE20CC3DF2009B700F /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA25C7ED20CC3DF2009B700F /* DoneViewController.swift */; };
 		FA6459D020BB2A0500770EE6 /* ErstellenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6459CF20BB2A0500770EE6 /* ErstellenViewController.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		FA07360020BAB5EC00CE409E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		FA0FE35E20CD4BF7005E04A6 /* KategorieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KategorieViewController.swift; sourceTree = "<group>"; };
 		FA1CFA6420BB24DD0061B548 /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
 		FA25C7EC20CBFE95009B700F /* MyOffice.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = MyOffice.gpx; path = ../../../MyOffice.gpx; sourceTree = "<group>"; };
 		FA25C7ED20CC3DF2009B700F /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				FA8572AE20C875BD00455CB0 /* ProfileViewController.swift */,
 				FA8572B020C87F5F00455CB0 /* MoreViewController.swift */,
 				FA25C7ED20CC3DF2009B700F /* DoneViewController.swift */,
+				FA0FE35E20CD4BF7005E04A6 /* KategorieViewController.swift */,
 			);
 			path = "Veranstaltungen iOS";
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				FA8572B120C87F5F00455CB0 /* MoreViewController.swift in Sources */,
 				FA6459D420BC05F900770EE6 /* RegisterViewController.swift in Sources */,
 				FA8572A020C6DA7F00455CB0 /* EventModel.swift in Sources */,
+				FA0FE35F20CD4BF7005E04A6 /* KategorieViewController.swift in Sources */,
 				FA1CFA6520BB24DD0061B548 /* PhotoUploadViewController.swift in Sources */,
 				FA8572A620C805BA00455CB0 /* MapViewController.swift in Sources */,
 				FA8572AB20C863D200455CB0 /* LoginDataModel.swift in Sources */,

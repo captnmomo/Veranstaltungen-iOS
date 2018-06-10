@@ -136,8 +136,29 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func sharedInstance(action: Int) {
+        switch (action) {
+        case 1:
+            self.tabBarController?.selectedIndex = 3;
+            let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "MoreViewController") as! MoreViewController
+            self.navigationController?.pushViewController(moreViewController, animated: true)
+        case 2:
+            self.tabBarController?.selectedIndex = 2;
+            let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "KategorieViewController") as! MoreViewController
+            self.navigationController?.pushViewController(moreViewController, animated: true)
+        case 3:
+            self.tabBarController?.selectedIndex = 1;
+            let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "erstellenView") as! MoreViewController
+            self.navigationController?.pushViewController(moreViewController, animated: true)
+            
+        default:
+            let trueStore = false
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
