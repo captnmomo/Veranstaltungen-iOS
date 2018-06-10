@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case View2 = "com.SE1.Veranstaltungen-iOS.First"
         case View3 = "com.SE1.Veranstaltungen-iOS.Second"
     }
-
+    
+    
 func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Swift.Void){
     let handledShortCutItem = handleShortCutItem(shortcutItem: shortcutItem)
     completionHandler(handledShortCutItem)
@@ -50,6 +53,7 @@ func handleShortCutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
     
     return handled
     }
+    
     
     
 
