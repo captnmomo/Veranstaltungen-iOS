@@ -11,7 +11,9 @@ import Foundation
 import MapKit
 
 
-class MapInterfaceController: WKInterfaceController {
+class MapInterfaceController: WKInterfaceController, WKCrownDelegate {
+    
+    
     
     var latitude: String = String()
     var longitude: String = String()
@@ -19,7 +21,7 @@ class MapInterfaceController: WKInterfaceController {
 
     @IBAction func changeView(_ value: Float) {
         
-        let degrees:CLLocationDegrees = CLLocationDegrees(value / 10)
+        let degrees:CLLocationDegrees = CLLocationDegrees(value / 700)
         
         let span = MKCoordinateSpanMake(degrees, degrees)
         let region = MKCoordinateRegionMake(poiCoodinates, span)
@@ -34,6 +36,7 @@ class MapInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+       
         let arrayContext = context as! NSArray
         latitude = arrayContext[0] as! String
         longitude = arrayContext[1] as! String
