@@ -21,7 +21,7 @@ class WatchEventDataModel: NSObject, URLSessionDataDelegate {
     
     func downloadItems() {
         
-        let urlPath = "http://10.179.4.243:8888/watchevent.php"
+        let urlPath = "https://gauss.wi.hm.edu/Veranstaltungen/watchevent.php"
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
@@ -88,7 +88,7 @@ class WatchEventDataModel: NSObject, URLSessionDataDelegate {
                 print(longitudeInt - longitudeIntRes!)
                 print(3/(111.320*cos))
                     
-                    if latitudeInt-latitudeIntRes! <= (2/110.574) && latitudeInt-latitudeIntRes! >= -(2/110.574) && longitudeInt-longitudeIntRes! <= (2/(111.320*cos)) && longitudeInt-longitudeIntRes! >= -(2/(111.320*cos)){
+                    if latitudeInt-latitudeIntRes! <= (1/110.574) && latitudeInt-latitudeIntRes! >= -(1/110.574) && longitudeInt-longitudeIntRes! <= (1/(111.320*cos)) && longitudeInt-longitudeIntRes! >= -(1/(111.320*cos)){
                         
                         name = name.replacingOccurrences(of: "ae", with: "ä")
                         name = name.replacingOccurrences(of: "oe", with: "ö")

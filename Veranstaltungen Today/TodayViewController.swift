@@ -110,7 +110,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
             var item: WatchEventModel = self.feedItems[0] as! WatchEventModel
             var locationEvent = CLLocation(latitude: Double(item.latitude!)!, longitude: Double(item.longitude!)!)
             var distance = myLocation.distance(from: locationEvent) / 1000
-        if let url = URL(string: "http://localhost:8888/getImage.php?id=" + item.id!) {
+        if let url = URL(string: "https://gauss.wi.hm.edu/Veranstaltungen/getImage.php?id=" + item.id!) {
             image1.contentMode = .scaleAspectFit
             downloadImage1(url: url)
         }
@@ -120,7 +120,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         item = self.feedItems[1] as! WatchEventModel
         locationEvent = CLLocation(latitude: Double(item.latitude!)!, longitude: Double(item.longitude!)!)
         distance = myLocation.distance(from: locationEvent) / 1000
-        if let url = URL(string: "http://localhost:8888/getImage.php?id=" + item.id!) {
+        if let url = URL(string: "https://gauss.wi.hm.edu/Veranstaltungen/getImage.php?id=" + item.id!) {
             image2.contentMode = .scaleAspectFit
             downloadImage2(url: url)
         }
@@ -130,7 +130,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         item = self.feedItems[2] as! WatchEventModel
         locationEvent = CLLocation(latitude: Double(item.latitude!)!, longitude: Double(item.longitude!)!)
         distance = myLocation.distance(from: locationEvent) / 1000
-        if let url = URL(string: "http://localhost:8888/getImage.php?id=" + item.id!) {
+        if let url = URL(string: "https://gauss.wi.hm.edu/Veranstaltungen/getImage.php?id=" + item.id!) {
             image3.contentMode = .scaleAspectFit
             downloadImage3(url: url)
         }
@@ -140,7 +140,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         item = self.feedItems[3] as! WatchEventModel
         locationEvent = CLLocation(latitude: Double(item.latitude!)!, longitude: Double(item.longitude!)!)
         distance = myLocation.distance(from: locationEvent) / 1000
-        if let url = URL(string: "http://localhost:8888/getImage.php?id=" + item.id!) {
+        if let url = URL(string: "https://gauss.wi.hm.edu/Veranstaltungen/getImage.php?id=" + item.id!) {
             image4.contentMode = .scaleAspectFit
             downloadImage4(url: url)
         }

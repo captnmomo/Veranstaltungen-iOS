@@ -43,7 +43,7 @@ class EventInterfaceController: WKInterfaceController {
         latitudeText = arrayContext[5] as! String
         longitudeText = arrayContext[4] as! String
         
-        if let url = URL(string: "http://10.179.4.243:8888/getImage.php?id=" + idText) {
+        if let url = URL(string: "https://gauss.wi.hm.edu/Veranstaltungen/getImage.php?id=" + idText) {
             downloadImage(url: url)
         }
         

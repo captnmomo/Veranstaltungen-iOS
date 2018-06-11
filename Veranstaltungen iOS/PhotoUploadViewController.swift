@@ -102,7 +102,7 @@ class PhotoUploadViewController: UIViewController, UIImagePickerControllerDelega
         
         if ImageView.image != nil {
         
-        let todo: String =  "http://localhost:8888/upload.php"
+        let todo: String =  "https://gauss.wi.hm.edu/Veranstaltungen/upload.php"
         
         guard let url = URL(string: todo) else {
             print("Error: cannot create URL")
@@ -162,7 +162,7 @@ class PhotoUploadViewController: UIViewController, UIImagePickerControllerDelega
         
         task.resume()
         } else {
-            let alert = UIAlertController(title: "Fehler!", message: "Bitte laden Sie ein Foto hoch!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Fehler", message: "Bitte laden Sie ein Foto hoch!", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
             

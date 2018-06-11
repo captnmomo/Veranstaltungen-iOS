@@ -30,7 +30,7 @@ class RegisterViewController: UIViewController {
         
         if(textUser.text?.isEmpty == false && textFirst.text?.isEmpty == false && textLast.text?.isEmpty == false && textPassword.text?.isEmpty == false && textEmail.text?.isEmpty == false){
         
-        let URL_USER_REGISTER = "http://localhost:8888/registration.php?user=" + user + "&password=" + password + "&firstname=" + firstname + "&lastname=" + lastname + "&email=" + email;
+        let URL_USER_REGISTER = "https://gauss.wi.hm.edu/Veranstaltungen/registration.php?user=" + user + "&password=" + password + "&firstname=" + firstname + "&lastname=" + lastname + "&email=" + email;
         print(URL_USER_REGISTER)
         let url: URL = URL(string: URL_USER_REGISTER)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)

@@ -25,7 +25,7 @@ class EventDataModel: NSObject, URLSessionDataDelegate {
         
          UmkreisString = umkreis
         
-        let urlPath = "http://localhost:8888/event.php?preis1=" + preis1 + "&preis2=" + preis2 + "&kategorie=" + kategorie;
+        let urlPath = "https://gauss.wi.hm.edu/Veranstaltungen/event.php?preis1=" + preis1 + "&preis2=" + preis2 + "&kategorie=" + kategorie;
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
