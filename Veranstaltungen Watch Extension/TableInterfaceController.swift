@@ -66,6 +66,7 @@ class TableInterfaceController: WKInterfaceController, WatchEventModelProtocol, 
         let location = locations[0]
         defaultValues.set(location.coordinate.latitude, forKey: "latitude")
         defaultValues.set(location.coordinate.longitude, forKey: "longitude")
+        print(defaultValues.double(forKey: "latitude"))
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {

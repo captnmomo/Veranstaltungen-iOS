@@ -17,27 +17,15 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate, Wat
         feedItems = items
     }
     
-    
     var defaultValues = UserDefaults.standard
-    var locationManager: CLLocationManager = CLLocationManager()
+
 
     override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
         
-       
-        self.locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        defaultValues.removeObject(forKey: "latitude")
+        defaultValues.removeObject(forKey: "longitude")
         
         // Configure interface objects here.
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-        defaultValues.set(location.coordinate.latitude, forKey: "latitude")
-        defaultValues.set(location.coordinate.longitude, forKey: "longitude")
-        print(defaultValues.double(forKey: "latitude"))
     }
     
     override func willActivate() {
