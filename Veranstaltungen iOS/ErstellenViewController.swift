@@ -34,7 +34,7 @@ class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             
              navigationController?.pushViewController(myVC, animated: true)
          }else{
-            let alert = UIAlertController(title: "Fehler!", message: "Bitte füllen Sie alle Felder aus!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Fehler", message: "Bitte füllen Sie alle Felder aus!", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
             

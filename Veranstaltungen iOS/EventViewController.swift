@@ -59,7 +59,7 @@ class EventViewController: UIViewController {
         websiteField.text = selectedLocation!.website!
         beschreibungField.text = selectedLocation!.beschreibung!
         
-        if let url = URL(string: "http://localhost:8888/getImage.php?id=" + selectedLocation!.id!) {
+        if let url = URL(string: "https://gauss.wi.hm.edu/Veranstaltungen/getImage.php?id=" + selectedLocation!.id!) {
             Bild.contentMode = .scaleAspectFit
             downloadImage(url: url)
         }

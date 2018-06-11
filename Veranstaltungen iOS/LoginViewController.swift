@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
         let user = textUser.text!
         let password = textPassword.text!
         
-        let URL_USER_LOGIN = "http://localhost:8888/Login.php?user=" + user + "&password=" + password;
+        let URL_USER_LOGIN = "https://gauss.wi.hm.edu/Veranstaltungen/Login.php?user=" + user + "&password=" + password;
         print(URL_USER_LOGIN)
         let url: URL = URL(string: URL_USER_LOGIN)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
