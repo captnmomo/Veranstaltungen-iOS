@@ -8,16 +8,50 @@
 
 import UIKit
 
-class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+    
+    let defaultValues = UserDefaults.standard
+    var latitudeString = String()
+    var longitudeString = String()
     
 
+    @IBAction func weiter(_ sender: Any) {
+        
+         if(name.text?.isEmpty == false && kategorie.text?.isEmpty == false && preis.text?.isEmpty == false && datum.text?.isEmpty == false && strasse.text?.isEmpty == false && webiste.text?.isEmpty == false && beschreibung.text?.isEmpty == false && hausnummer.text?.isEmpty == false && ort.text?.isEmpty == false){
+            let myVC = storyboard?.instantiateViewController(withIdentifier: "photoView") as! PhotoUploadViewController
+            myVC.namePassed = name.text!
+            myVC.kategoriePassed = kategorie.text!
+            myVC.preisPassed = preis.text!
+            myVC.datumPassed = datum.text!
+            myVC.strassePassed = strasse.text!
+            myVC.hausnummerPassed = hausnummer.text!
+            myVC.ortPassed = ort.text!
+            myVC.websitePassed = webiste.text!
+            myVC.beschreibungPassed = beschreibung.text!
+            
+            print(myVC.namePassed)
+            
+            
+             navigationController?.pushViewController(myVC, animated: true)
+         }else{
+            let alert = UIAlertController(title: "Fehler!", message: "Bitte füllen Sie alle Felder aus!", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+    }
+
+    @IBOutlet weak var bottomBeschreibung: NSLayoutConstraint!
+    @IBOutlet weak var ort: UITextField!
+    @IBOutlet weak var hausnummer: UITextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var beschreibung: UITextField!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var kategorie: UITextField!
     @IBOutlet weak var preis: UITextField!
     @IBOutlet weak var datum: UITextField!
-    @IBOutlet weak var adresse: UITextField!
+    @IBOutlet weak var strasse: UITextField!
     @IBOutlet weak var webiste: UITextField!
     
     let pickerDatum = UIDatePicker()
@@ -34,7 +68,9 @@ class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         self.name.inputAccessoryView = keyboardToolbar
         self.preis.inputAccessoryView = keyboardToolbar
         self.datum.inputAccessoryView = keyboardToolbar
-        self.adresse.inputAccessoryView = keyboardToolbar
+        self.strasse.inputAccessoryView = keyboardToolbar
+        self.hausnummer.inputAccessoryView = keyboardToolbar
+        self.ort.inputAccessoryView = keyboardToolbar
         self.webiste.inputAccessoryView = keyboardToolbar
         self.beschreibung.inputAccessoryView = keyboardToolbar
     }
@@ -80,7 +116,11 @@ class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     kategorie.text = kategoriePickerData[row]
     }
     
+    var activeField: UITextField?
+    
     override func viewDidLoad() {
+        
+        self.beschreibung.delegate = self
         
         let pickerKategorie = UIPickerView()
         
@@ -98,8 +138,85 @@ class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         setDoneOnKeyboard()
         
         super.viewDidLoad()
+        
+        
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveTextField(textField: textField, moveDistance: -250, up: true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveTextField(textField: textField, moveDistance: -250, up: false)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func moveTextField(textField: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance: -moveDistance)
+        
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if defaultValues.string(forKey: "username") != nil{
+            
+        }else{
+            
+            let alert = UIAlertController(title: "Fehler!", message: "Bitte loggen Sie sich erst ein!", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Einloggen", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                self.tabBarController?.selectedIndex = 3;
+                let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "MoreViewController") as! MoreViewController
+                self.navigationController?.pushViewController(moreViewController, animated: true)
+            }
+            
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true)
+        }
+        
+        name.text = ""
+        kategorie.text = ""
+        preis.text = ""
+        datum.text = ""
+        strasse.text = ""
+        hausnummer.text = ""
+        ort.text = ""
+        webiste.text = ""
+        beschreibung.text = ""
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if defaultValues.string(forKey: "username") != nil{
+            
+        }else{
+            
+            let alert = UIAlertController(title: "Fehler!", message: "Bitte loggen Sie sich erst ein!", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Einloggen", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                self.tabBarController?.selectedIndex = 3;
+                let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "MoreViewController") as! MoreViewController
+                self.navigationController?.pushViewController(moreViewController, animated: true)
+            }
+            
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {

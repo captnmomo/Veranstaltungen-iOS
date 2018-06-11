@@ -11,6 +11,11 @@ import UIKit
 class TableViewController: UITableViewController, EventModelProtocol {
     //Properties
     
+    @IBOutlet weak var kategorieLabel: UILabel!
+    var preis1passed = ""
+    var preis2passed = ""
+    var kategoriepassed = ""
+    var umkreispassed = ""
     var feedItems: NSArray = NSArray()
     var selectedLocation : EventModel = EventModel()
     @IBOutlet weak var listTableView: UITableView!
@@ -23,9 +28,12 @@ class TableViewController: UITableViewController, EventModelProtocol {
         self.listTableView.delegate = self
         self.listTableView.dataSource = self
         
+        kategorieLabel.text = kategoriepassed
+        
         let eventDataModel = EventDataModel()
         eventDataModel.delegate = self
-        eventDataModel.downloadItems()
+        print("Umkreis: " + umkreispassed)
+        eventDataModel.downloadItems(preis1: preis1passed, preis2: preis2passed, kategorie: kategoriepassed, umkreis: umkreispassed)
         
     }
     
@@ -53,5 +61,18 @@ class TableViewController: UITableViewController, EventModelProtocol {
         myCell.textLabel!.text = itemData
         
         return myCell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedLocation = feedItems[indexPath.row] as! EventModel
+        // Manually call segue to detail view controller
+        self.performSegue(withIdentifier: "eventSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailVC  = segue.destination as! EventViewController
+        // Set the property to the selected location so when the view for
+        // detail view controller loads, it can access that property to get the feeditem obj
+        detailVC.selectedLocation = selectedLocation
     }
 }

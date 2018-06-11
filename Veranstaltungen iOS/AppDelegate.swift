@@ -7,15 +7,59 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    enum ShortcutType: String {
+        case View1 = "com.SE1.Veranstaltungen-iOS.Third"
+        case View2 = "com.SE1.Veranstaltungen-iOS.First"
+        case View3 = "com.SE1.Veranstaltungen-iOS.Second"
+    }
+    
+    
+func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Swift.Void){
+    let handledShortCutItem = handleShortCutItem(shortcutItem: shortcutItem)
+    completionHandler(handledShortCutItem)
+    
+}
 
+func handleShortCutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
+    var handled = false
+    
+    if let shortcutType = ShortcutType.init(rawValue: shortcutItem.type) {
+        
+        // Pop to root view controller so that approperiete segue can be performed
+        
+        switch shortcutType {
+        case .View1:
+            let rootViewController = self.window!.rootViewController as! UITabBarController;
+            rootViewController.selectedIndex = 2
+            handled = true
+        case .View2:
+            let rootViewController = self.window!.rootViewController as! UITabBarController;
+            rootViewController.selectedIndex = 3
+            handled = true
+        case .View3:
+            let rootViewController = self.window!.rootViewController as! UITabBarController;
+            rootViewController.selectedIndex = 1
+            handled = true
+        }
+    }
+    
+    return handled
+    }
+    
+    
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         return true
     }
 
@@ -34,13 +78,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background,
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
+
 

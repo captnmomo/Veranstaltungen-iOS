@@ -20,8 +20,11 @@ extension UIViewController {
 }
 
 import UIKit
+import CoreLocation
 
-class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+    
+    let defaultValues = UserDefaults.standard
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -53,6 +56,34 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         }
     }
     
+    @IBAction func suchen(_ sender: Any) {
+        if textPreis1.text!.isEmpty == true && textPreis2.text!.isEmpty == true && textKategorie.text!.isEmpty == true && textUmkreis.text!.isEmpty == true {
+            let alert = UIAlertController(title: "Fehler!", message: "Bitte füllen Sie alle Felder aus!", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        }else{
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "TableView") as! TableViewController
+        myVC.preis1passed = textPreis1.text!
+        myVC.preis2passed = textPreis2.text!
+        myVC.kategoriepassed = textKategorie.text!
+        myVC.umkreispassed = textUmkreis.text!
+        if defaultValues.integer(forKey: "testzahl") != nil {
+            print("TestSerach")
+            print(defaultValues.integer(forKey: "testzahl"))
+            var i = defaultValues.integer(forKey: "testzahl")
+            let iString = String(i)
+            i = i + 1
+            defaultValues.set(i, forKey: "testzahl")
+            let DefaultString = "Array" + iString
+            let array : [String: String] = ["Preis1": textPreis1.text!, "Preis2": textPreis2.text!, "Kategorie": textKategorie.text!, "Umkreis": textUmkreis.text!]
+            print ("TestSearch: " + array["Preis1"]!)
+            defaultValues.set(array,forKey: DefaultString)
+        }
+        navigationController?.pushViewController(myVC, animated: true)
+        }
+    }
     func setDoneOnKeyboard() {
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
@@ -71,8 +102,10 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @IBOutlet weak var showcase: UIImageView!
     
+    @IBOutlet weak var searchedTableView: UITableView!
     let kategoriePickerData = [String](arrayLiteral: "Party", "Natur", "Familie", "Jugend")
     let umkreisPickerData = [String](arrayLiteral: "10km", "30km", "50km", "100km", ">100km")
+    let locationManager = CLLocationManager()
     @IBOutlet weak var textKategorie: UITextField!
     @IBOutlet weak var textUmkreis: UITextField!
     @IBOutlet weak var textPreis1: UITextField!
@@ -94,14 +127,107 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         setDoneOnKeyboard()
         
+        self.searchedTableView.delegate = self
+        self.searchedTableView.dataSource = self
+        
+        searchedTableView.reloadData()
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func sharedInstance(action: Int) {
+        switch (action) {
+        case 1:
+            self.tabBarController?.selectedIndex = 3;
+            let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "MoreViewController") as! MoreViewController
+            self.navigationController?.pushViewController(moreViewController, animated: true)
+        case 2:
+            self.tabBarController?.selectedIndex = 2;
+            let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "KategorieViewController") as! MoreViewController
+            self.navigationController?.pushViewController(moreViewController, animated: true)
+        case 3:
+            self.tabBarController?.selectedIndex = 1;
+            let moreViewController = self.storyboard?.instantiateViewController(withIdentifier: "erstellenView") as! MoreViewController
+            self.navigationController?.pushViewController(moreViewController, animated: true)
+            
+        default:
+            let trueStore = false
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        textKategorie.text = ""
+        textPreis1.text = ""
+        textPreis2.text = ""
+        textUmkreis.text = ""
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchedTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return the number of feed items
+        print(defaultValues.integer(forKey: "testzahl"))
+       return defaultValues.integer(forKey: "testzahl")
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // Retrieve cell
+        print("test")
+        let cellIdentifier: String = "searchedCell"
+        let myCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)!
+        // Get the location to be shown
+        let arrayInteger = defaultValues.integer(forKey: "testzahl")
+        let countRow = arrayInteger - indexPath.row - 1
+        let countString = String(countRow)
+        let arraystring = "Array" + countString
+        print(arraystring)
+        let readArray = defaultValues.value(forKey: arraystring)! as! NSDictionary
+        let kategorie = readArray["Kategorie"] as? String
+        let Umkreis = readArray["Umkreis"] as? String
+        let Preis1 = readArray["Preis1"] as? String
+        let Preis2 = readArray["Preis2"] as? String
+        print("test: " + Preis2!)
+        let itemData = kategorie! + ", " + Umkreis! + ", " + Preis1! + "€ bis " + Preis2! + "€"
+        myCell.textLabel!.text = itemData
+        
+        return myCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let arrayInteger = defaultValues.integer(forKey: "testzahl")
+        let countRow = arrayInteger - indexPath.row - 1
+        let countString = String(countRow)
+        let arraystring = "Array" + countString
+        let readArray = defaultValues.value(forKey: arraystring)! as! NSDictionary
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "TableView") as! TableViewController
+        myVC.preis1passed = (readArray["Preis1"] as? String)!
+        myVC.preis2passed = (readArray["Preis2"] as? String)!
+        myVC.kategoriepassed = (readArray["Kategorie"] as? String)!
+        myVC.umkreispassed = (readArray["Umkreis"] as? String)!
+        navigationController?.pushViewController(myVC, animated: true)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        defaultValues.set(location.coordinate.latitude, forKey: "latitude")
+        defaultValues.set(location.coordinate.longitude, forKey: "longitude")
+    }
+    }
 
-}
+
 

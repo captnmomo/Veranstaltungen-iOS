@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Veranstaltungen_Watch_Extension">
+                    <items>
+                        <imageView alignment="left" image="Logo_SE1_white" id="DMd-Qj-s2x"/>
+                        <button width="1" alignment="left" title="In der Nähe" id="DLd-zM-5VJ">
+                            <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                            <color key="backgroundColor" red="0.3294117647" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="9ge-bb-f9c" kind="push" id="UGZ-bw-zIW"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--listTable-->
+        <scene sceneID="Jge-0i-O4J">
+            <objects>
+                <controller identifier="listTable" id="9ge-bb-f9c" customClass="TableInterfaceController" customModule="Veranstaltungen_Watch_Extension">
+                    <items>
+                        <table alignment="left" id="mO6-Iu-olB">
+                            <items>
+                                <tableRow identifier="row" id="9AC-3t-te8" customClass="rowController" customModule="Veranstaltungen_Watch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="we2-BR-etw">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Label" id="wOA-zw-i0S"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="wOA-zw-i0S" id="J0Y-SV-9i3"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableOutlet" destination="mO6-Iu-olB" id="FzK-JR-o3b"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="502" y="297"/>
+        </scene>
+        <!--eventView-->
+        <scene sceneID="lCp-gI-kVv">
+            <objects>
+                <controller identifier="eventView" id="rRV-i3-Q3z" customClass="EventInterfaceController" customModule="Veranstaltungen_Watch_Extension">
+                    <items>
+                        <label alignment="left" text="Label" id="Cte-n4-Y6l"/>
+                        <imageView alignment="left" id="krd-bI-gIH"/>
+                        <label alignment="left" text="Label" id="20e-pL-z0A"/>
+                        <label alignment="left" text="Label" id="nsf-R4-10T"/>
+                        <button width="1" alignment="left" title="Karte" id="fwS-km-vN8">
+                            <color key="backgroundColor" red="0.3294117647" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="mapButton" destination="rRV-i3-Q3z" id="9g8-8P-1b0"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="imageView" destination="krd-bI-gIH" id="5Pa-Mw-crj"/>
+                        <outlet property="kategorieLabel" destination="nsf-R4-10T" id="QHE-J7-SFP"/>
+                        <outlet property="nameLabel" destination="Cte-n4-Y6l" id="dwi-C6-P4A"/>
+                        <outlet property="preisLabel" destination="20e-pL-z0A" id="gfE-xg-X0l"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="831" y="345"/>
+        </scene>
+        <!--mapView-->
+        <scene sceneID="KYJ-qJ-4YU">
+            <objects>
+                <controller identifier="mapView" id="8ls-wC-Tdr" customClass="MapInterfaceController" customModule="Veranstaltungen_Watch_Extension">
+                    <items>
+                        <map height="136" alignment="left" id="hL2-jw-NaJ"/>
+                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="ebj-W9-7UA">
+                            <connections>
+                                <action selector="changeView:" destination="8ls-wC-Tdr" id="Qeg-Vd-Tmr"/>
+                            </connections>
+                        </slider>
+                    </items>
+                    <connections>
+                        <outlet property="MapView" destination="hL2-jw-NaJ" id="hkr-Tl-FaW"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1089" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Veranstaltungen_Watch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

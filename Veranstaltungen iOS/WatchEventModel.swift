@@ -1,16 +1,14 @@
 //
-//  LocationModel.swift
-//  Veranstaltungen iOS
+//  WatchEventModel.swift
+//  Veranstaltungen Watch Extension
 //
-//  Created by momo on 05.06.18.
+//  Created by momo on 10.06.18.
 //  Copyright © 2018 SE1. All rights reserved.
 //
 
-import UIKit
+import WatchKit
 
-class EventModel: NSObject {
-
-    //properties
+class WatchEventModel: NSObject {
     
     var name: String?
     var kategorie: String?
@@ -53,5 +51,4 @@ class EventModel: NSObject {
         return "Name: \(name), Kategorie: \(kategorie), Preis: \(preis), Datum: \(datum), latitude: \(latitude), longitude: \(longitude), id: \(id), website: \(website)"
         
     }
-    
 }
