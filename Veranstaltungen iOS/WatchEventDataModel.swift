@@ -8,6 +8,7 @@
 
 import WatchKit
 
+
 protocol WatchEventModelProtocol: class {
     func itemsDownloaded(items: NSArray)
 }
@@ -20,7 +21,7 @@ class WatchEventDataModel: NSObject, URLSessionDataDelegate {
     
     func downloadItems() {
         
-        let urlPath = "http://localhost:8888/watchevent.php"
+        let urlPath = "http://10.179.4.243:8888/watchevent.php"
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         

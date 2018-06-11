@@ -27,7 +27,13 @@
 		FA0FE39E20CD6834005E04A6 /* WatchEventDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FE39820CD65F1005E04A6 /* WatchEventDataModel.swift */; };
 		FA0FE39F20CD6837005E04A6 /* WatchEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FE39A20CD6665005E04A6 /* WatchEventModel.swift */; };
 		FA0FE3A020CD69E2005E04A6 /* TableInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FE39620CD62A2005E04A6 /* TableInterfaceController.swift */; };
+		FA14D67E20CE61DA008ECA78 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC339820CE4676003380C5 /* TodayViewController.swift */; };
+		FA14D67F20CE6249008ECA78 /* WatchEventDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FE39820CD65F1005E04A6 /* WatchEventDataModel.swift */; };
+		FA14D68020CE624B008ECA78 /* WatchEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FE39A20CD6665005E04A6 /* WatchEventModel.swift */; };
 		FA1CFA6520BB24DD0061B548 /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CFA6420BB24DD0061B548 /* PhotoUploadViewController.swift */; };
+		FA23AA9220CE4DF600B305EE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA780B2120CD777C00077C8D /* CoreLocation.framework */; };
+		FA23AA9320CE4E4500B305EE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8572A820C8070600455CB0 /* MapKit.framework */; };
+		FA23AA9420CE4E5D00B305EE /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC339520CE4676003380C5 /* NotificationCenter.framework */; };
 		FA25C7EE20CC3DF2009B700F /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA25C7ED20CC3DF2009B700F /* DoneViewController.swift */; };
 		FA6459D020BB2A0500770EE6 /* ErstellenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6459CF20BB2A0500770EE6 /* ErstellenViewController.swift */; };
 		FA6459D220BC05E400770EE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6459D120BC05E400770EE6 /* LoginViewController.swift */; };
@@ -44,6 +50,10 @@
 		FA8572AD20C868F100455CB0 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572AC20C868F100455CB0 /* LoginModel.swift */; };
 		FA8572AF20C875BD00455CB0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572AE20C875BD00455CB0 /* ProfileViewController.swift */; };
 		FA8572B120C87F5F00455CB0 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572B020C87F5F00455CB0 /* MoreViewController.swift */; };
+		FACC339620CE4676003380C5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC339520CE4676003380C5 /* NotificationCenter.framework */; };
+		FACC339920CE4676003380C5 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC339820CE4676003380C5 /* TodayViewController.swift */; };
+		FACC339C20CE4676003380C5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACC339A20CE4676003380C5 /* MainInterface.storyboard */; };
+		FACC33A020CE4676003380C5 /* Veranstaltungen Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FACC339420CE4676003380C5 /* Veranstaltungen Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FAEC0C2920B592ED00674456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2820B592ED00674456 /* AppDelegate.swift */; };
 		FAEC0C2B20B592ED00674456 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2A20B592ED00674456 /* FirstViewController.swift */; };
 		FAEC0C2D20B592ED00674456 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2C20B592ED00674456 /* SecondViewController.swift */; };
@@ -68,6 +78,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = FA0FE36120CD5A73005E04A6;
 			remoteInfo = "Veranstaltungen Watch";
+		};
+		FACC339E20CE4676003380C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAEC0C1D20B592ED00674456 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FACC339320CE4675003380C5;
+			remoteInfo = "Veranstaltungen Today";
 		};
 		FAEC0C3C20B592EE00674456 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -108,6 +125,17 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FACC33A420CE4676003380C5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FACC33A020CE4676003380C5 /* Veranstaltungen Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +174,11 @@
 		FA8572AC20C868F100455CB0 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		FA8572AE20C875BD00455CB0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FA8572B020C87F5F00455CB0 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		FACC339420CE4676003380C5 /* Veranstaltungen Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Veranstaltungen Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACC339520CE4676003380C5 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		FACC339820CE4676003380C5 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		FACC339B20CE4676003380C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		FACC339D20CE4676003380C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAEC0C2520B592ED00674456 /* Veranstaltungen iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Veranstaltungen iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEC0C2820B592ED00674456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAEC0C2A20B592ED00674456 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -170,10 +203,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FACC339120CE4675003380C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA23AA9320CE4E4500B305EE /* MapKit.framework in Frameworks */,
+				FA23AA9220CE4DF600B305EE /* CoreLocation.framework in Frameworks */,
+				FACC339620CE4676003380C5 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAEC0C2220B592ED00674456 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA23AA9420CE4E5D00B305EE /* NotificationCenter.framework in Frameworks */,
 				FA780B2220CD777C00077C8D /* CoreLocation.framework in Frameworks */,
 				FA8572A920C8070600455CB0 /* MapKit.framework in Frameworks */,
 			);
@@ -228,8 +272,19 @@
 			children = (
 				FA780B2120CD777C00077C8D /* CoreLocation.framework */,
 				FA8572A820C8070600455CB0 /* MapKit.framework */,
+				FACC339520CE4676003380C5 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FACC339720CE4676003380C5 /* Veranstaltungen Today */ = {
+			isa = PBXGroup;
+			children = (
+				FACC339820CE4676003380C5 /* TodayViewController.swift */,
+				FACC339A20CE4676003380C5 /* MainInterface.storyboard */,
+				FACC339D20CE4676003380C5 /* Info.plist */,
+			);
+			path = "Veranstaltungen Today";
 			sourceTree = "<group>";
 		};
 		FAEC0C1C20B592ED00674456 = {
@@ -241,6 +296,7 @@
 				FAEC0C4920B592EE00674456 /* Veranstaltungen iOSUITests */,
 				FA0FE36320CD5A73005E04A6 /* Veranstaltungen Watch */,
 				FA0FE37220CD5A75005E04A6 /* Veranstaltungen Watch Extension */,
+				FACC339720CE4676003380C5 /* Veranstaltungen Today */,
 				FAEC0C2620B592ED00674456 /* Products */,
 				FA8572A720C8070600455CB0 /* Frameworks */,
 			);
@@ -254,6 +310,7 @@
 				FAEC0C4620B592EE00674456 /* Veranstaltungen iOSUITests.xctest */,
 				FA0FE36220CD5A73005E04A6 /* Veranstaltungen Watch.app */,
 				FA0FE36E20CD5A75005E04A6 /* Veranstaltungen Watch Extension.appex */,
+				FACC339420CE4676003380C5 /* Veranstaltungen Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,6 +401,23 @@
 			productReference = FA0FE36E20CD5A75005E04A6 /* Veranstaltungen Watch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		FACC339320CE4675003380C5 /* Veranstaltungen Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FACC33A320CE4676003380C5 /* Build configuration list for PBXNativeTarget "Veranstaltungen Today" */;
+			buildPhases = (
+				FACC339020CE4675003380C5 /* Sources */,
+				FACC339120CE4675003380C5 /* Frameworks */,
+				FACC339220CE4675003380C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Veranstaltungen Today";
+			productName = "Veranstaltungen Today";
+			productReference = FACC339420CE4676003380C5 /* Veranstaltungen Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FAEC0C2420B592ED00674456 /* Veranstaltungen iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAEC0C4F20B592EE00674456 /* Build configuration list for PBXNativeTarget "Veranstaltungen iOS" */;
@@ -352,11 +426,13 @@
 				FAEC0C2220B592ED00674456 /* Frameworks */,
 				FAEC0C2320B592ED00674456 /* Resources */,
 				FA0FE38720CD5A76005E04A6 /* Embed Watch Content */,
+				FACC33A420CE4676003380C5 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				FA0FE37E20CD5A76005E04A6 /* PBXTargetDependency */,
+				FACC339F20CE4676003380C5 /* PBXTargetDependency */,
 			);
 			name = "Veranstaltungen iOS";
 			productName = "Veranstaltungen iOS";
@@ -415,6 +491,9 @@
 					FA0FE36D20CD5A75005E04A6 = {
 						CreatedOnToolsVersion = 9.4;
 					};
+					FACC339320CE4675003380C5 = {
+						CreatedOnToolsVersion = 9.4;
+					};
 					FAEC0C2420B592ED00674456 = {
 						CreatedOnToolsVersion = 9.3;
 					};
@@ -446,6 +525,7 @@
 				FAEC0C4520B592EE00674456 /* Veranstaltungen iOSUITests */,
 				FA0FE36120CD5A73005E04A6 /* Veranstaltungen Watch */,
 				FA0FE36D20CD5A75005E04A6 /* Veranstaltungen Watch Extension */,
+				FACC339320CE4675003380C5 /* Veranstaltungen Today */,
 			);
 		};
 /* End PBXProject section */
@@ -465,6 +545,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA0FE37A20CD5A76005E04A6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACC339220CE4675003380C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACC339C20CE4676003380C5 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +599,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FACC339020CE4675003380C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA14D67F20CE6249008ECA78 /* WatchEventDataModel.swift in Sources */,
+				FACC339920CE4676003380C5 /* TodayViewController.swift in Sources */,
+				FA14D68020CE624B008ECA78 /* WatchEventModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAEC0C2120B592ED00674456 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -537,6 +635,7 @@
 				FAEC0C2B20B592ED00674456 /* FirstViewController.swift in Sources */,
 				FA780B2020CD73A700077C8D /* InterfaceController.swift in Sources */,
 				FA07360120BAB5EC00CE409E /* TableViewController.swift in Sources */,
+				FA14D67E20CE61DA008ECA78 /* TodayViewController.swift in Sources */,
 				FA0FE39C20CD6832005E04A6 /* WatchEventModel.swift in Sources */,
 				FA25C7EE20CC3DF2009B700F /* DoneViewController.swift in Sources */,
 			);
@@ -571,6 +670,11 @@
 			target = FA0FE36120CD5A73005E04A6 /* Veranstaltungen Watch */;
 			targetProxy = FA0FE37D20CD5A76005E04A6 /* PBXContainerItemProxy */;
 		};
+		FACC339F20CE4676003380C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FACC339320CE4675003380C5 /* Veranstaltungen Today */;
+			targetProxy = FACC339E20CE4676003380C5 /* PBXContainerItemProxy */;
+		};
 		FAEC0C3D20B592EE00674456 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FAEC0C2420B592ED00674456 /* Veranstaltungen iOS */;
@@ -590,6 +694,14 @@
 				FA0FE36520CD5A73005E04A6 /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		FACC339A20CE4676003380C5 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FACC339B20CE4676003380C5 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		FAEC0C2E20B592ED00674456 /* Main.storyboard */ = {
@@ -692,6 +804,48 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		FACC33A120CE4676003380C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VE85X6LN8T;
+				INFOPLIST_FILE = "Veranstaltungen Today/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SE1.Veranstaltungen-iOS.Veranstaltungen-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FACC33A220CE4676003380C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VE85X6LN8T;
+				INFOPLIST_FILE = "Veranstaltungen Today/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SE1.Veranstaltungen-iOS.Veranstaltungen-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -812,6 +966,7 @@
 		FAEC0C5020B592EE00674456 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -832,6 +987,7 @@
 		FAEC0C5120B592EE00674456 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -948,6 +1104,15 @@
 			buildConfigurations = (
 				FA0FE38520CD5A76005E04A6 /* Debug */,
 				FA0FE38620CD5A76005E04A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FACC33A320CE4676003380C5 /* Build configuration list for PBXNativeTarget "Veranstaltungen Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACC33A120CE4676003380C5 /* Debug */,
+				FACC33A220CE4676003380C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

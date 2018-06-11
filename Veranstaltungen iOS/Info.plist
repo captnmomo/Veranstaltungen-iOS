@@ -61,7 +61,7 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>localhost:8080/</key>
+			<key>10.179.4.243:8888/</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>

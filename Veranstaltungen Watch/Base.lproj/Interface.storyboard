@@ -14,7 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Veranstaltungen_Watch_Extension">
                     <items>
-                        <label width="136" alignment="left" text="Veranstaltungen" textAlignment="center" id="ksR-zf-iIi"/>
+                        <imageView alignment="left" image="Logo_SE1_white" id="DMd-Qj-s2x"/>
                         <button width="1" alignment="left" title="In der Nähe" id="DLd-zM-5VJ">
                             <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                             <color key="backgroundColor" red="0.3294117647" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -85,7 +85,12 @@
             <objects>
                 <controller identifier="mapView" id="8ls-wC-Tdr" customClass="MapInterfaceController" customModule="Veranstaltungen_Watch_Extension">
                     <items>
-                        <map height="149" alignment="left" id="hL2-jw-NaJ"/>
+                        <map height="136" alignment="left" id="hL2-jw-NaJ"/>
+                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="ebj-W9-7UA">
+                            <connections>
+                                <action selector="changeView:" destination="8ls-wC-Tdr" id="Qeg-Vd-Tmr"/>
+                            </connections>
+                        </slider>
                     </items>
                     <connections>
                         <outlet property="MapView" destination="hL2-jw-NaJ" id="hkr-Tl-FaW"/>
