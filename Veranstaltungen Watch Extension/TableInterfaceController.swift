@@ -64,8 +64,8 @@ class TableInterfaceController: WKInterfaceController, WatchEventModelProtocol, 
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
-        latitude = location.coordinate.latitude
-        longitude = location.coordinate.latitude
+        defaultValues.set(location.coordinate.latitude, forKey: "latitude")
+        defaultValues.set(location.coordinate.longitude, forKey: "longitude")
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
