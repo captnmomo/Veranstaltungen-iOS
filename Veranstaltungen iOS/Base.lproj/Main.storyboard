@@ -16,7 +16,7 @@
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="showcase" translatesAutoresizingMaskIntoConstraints="NO" id="nsN-rC-Hdn">
@@ -301,7 +301,7 @@
             <objects>
                 <tableViewController id="uQh-uD-ey0" customClass="TableViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="37p-Yr-Vp3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -346,14 +346,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDi-t6-lXT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2495" y="-320"/>
+            <point key="canvasLocation" x="2530" y="-570"/>
         </scene>
         <!--Erstellen View Controller-->
         <scene sceneID="sB0-PX-nlB">
             <objects>
                 <viewController id="psw-un-a1V" customClass="ErstellenViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ng-wD-0ab">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZq-GD-8WJ">
@@ -550,14 +550,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6iO-Xz-eFU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2114" y="1038"/>
+            <point key="canvasLocation" x="2113" y="1276"/>
         </scene>
         <!--Photo Upload View Controller-->
         <scene sceneID="9rg-Sz-JL7">
             <objects>
                 <viewController id="iWm-dq-4PU" customClass="PhotoUploadViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SoB-0I-bx7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ptj-8r-jOA">
@@ -656,24 +656,110 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77v-PN-lLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2832.8000000000002" y="1087.6847290640394"/>
+            <point key="canvasLocation" x="3073" y="1790"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4YP-ep-51T">
+            <objects>
+                <viewController id="Krn-Jp-zkR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6T9-9j-jRf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15a-VB-Dgm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Für die Jugend nur das Beste!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCG-Mf-JAn">
+                                        <rect key="frame" x="73" y="126" width="225" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="81E-hU-mgK">
+                                        <rect key="frame" x="67" y="171" width="240" height="257"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Jung und voller Elan - das ist die Jugend von heute! Dementsprechend gibt es für euch ein großes Spektrum an Freizeitaktivitäten, die perfekt auf euch zusammengeschnitten sind. Dabei reicht es vom „armen Studenten“ mit wenig Geld, hinzu Jugendlichen mit einem etwas größeren Geldbeutel. Dabei ist eins jedoch garantiert: Spaß und Kurzweiligkeit.</string>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="chillen-draussen-entspannen-207936" translatesAutoresizingMaskIntoConstraints="NO" id="KnW-0J-d5Q">
+                                        <rect key="frame" x="35" y="466" width="300" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="si5-nx-uvP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q7z-sL-tyl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2861.5999999999999" y="1067.7339901477833"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OHu-Zd-Okh">
+            <objects>
+                <viewController id="N4a-np-WuL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2b0-w4-2UY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sRG-M0-YbB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Party für jedes Alter !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVX-Kd-0aB">
+                                        <rect key="frame" x="106" y="116" width="162" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t4l-X2-AD4">
+                                        <rect key="frame" x="67" y="167" width="240" height="186"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Du bist Feierwütig, ob Jung oder Alt?! Dann informiere dich hier über alle aktuellen Events in deiner Nähe. Von Kleinveranstaltungen bis Großveranstaltungen in Form eines Festivals. Es wird für jeden eine Veranstaltung in deinem Musikgenre geben. </string>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="damen-draussen-erholung-1117256" translatesAutoresizingMaskIntoConstraints="NO" id="f8Y-SR-yTR">
+                                        <rect key="frame" x="37" y="394" width="300" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fHg-ck-i3Z"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSF-Ic-IBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3837.5999999999999" y="858.62068965517244"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ier-Xn-GEN">
             <objects>
                 <viewController id="ARB-yN-nRM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bNM-n6-45W">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veranstaltung erfolgreich" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGk-iH-jh5">
-                                <rect key="frame" x="56.333333333333343" y="393" width="262.66666666666663" height="26"/>
+                                <rect key="frame" x="56.333333333333343" y="351.66666666666669" width="262.66666666666663" height="26"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="1" green="0.97306179660000003" blue="0.95286196410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="erstellt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpz-Eo-mo6">
-                                <rect key="frame" x="151" y="427" width="73" height="27"/>
+                                <rect key="frame" x="151" y="385.66666666666669" width="73" height="27"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="1" green="0.97306179660000003" blue="0.95286196410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -722,14 +808,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5f6-Mc-rGZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3544.8000000000002" y="1089.9014778325125"/>
+            <point key="canvasLocation" x="4151" y="1571"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Kategorien-->
+        <scene sceneID="7qa-Ba-g4y">
+            <objects>
+                <navigationController id="m5a-gd-moi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Kategorien" image="icons8-open-25" id="QkQ-6t-cLM"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UDC-kz-xVZ">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.21544053819444445" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="5KT-Y6-fav"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8tJ-vf-NKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1292" y="341"/>
+        </scene>
+        <!--Kategorien-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FZ9-xy-VUg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="imageView:6IC-mV-h8c:image" translatesAutoresizingMaskIntoConstraints="NO" id="6IC-mV-h8c">
@@ -746,31 +850,15 @@
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="4911-familie-zapp-weltreise-3" translatesAutoresizingMaskIntoConstraints="NO" id="4BT-gu-PKB">
-                                <rect key="frame" x="16" y="188" width="150" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Titelbild Jugend" translatesAutoresizingMaskIntoConstraints="NO" id="Oa5-4A-giW">
                                 <rect key="frame" x="432" y="553" width="212" height="196"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="natur-wald-teaser" translatesAutoresizingMaskIntoConstraints="NO" id="v0g-jb-5if">
-                                <rect key="frame" x="188" y="187" width="150" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Titelbild Jugend" translatesAutoresizingMaskIntoConstraints="NO" id="uDy-xM-5bh">
-                                <rect key="frame" x="16" y="396" width="150" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="area47_otztal_partyarea_riverhaus_1" translatesAutoresizingMaskIntoConstraints="NO" id="X8c-Wa-Kld">
                                 <rect key="frame" x="-873" y="-180" width="100" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="area47_otztal_partyarea_riverhaus_1" translatesAutoresizingMaskIntoConstraints="NO" id="xap-kr-6RQ">
-                                <rect key="frame" x="188" y="396" width="150" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c8a-lz-Lcy">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="c8a-lz-Lcy">
                                 <rect key="frame" x="27" y="524" width="332" height="138"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Sie interessieren sich für Familie, Jugend, Natur oder Party. Dann finden sie bei uns die perfekten Aktivitäten. Ob güntisg oder teuer, für jeden Geldbeutel ist etwas dabei. Stöbert bei uns rum und sucht euch die passenden Events aus!</string>
@@ -806,35 +894,168 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cI-lf-Trq">
+                                <rect key="frame" x="187" y="187" width="150" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="natur-wald-teaser"/>
+                                <connections>
+                                    <segue destination="nSx-Jp-kkn" kind="show" id="TY2-ys-ye8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAK-yq-ujH">
+                                <rect key="frame" x="21" y="395" width="150" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Titelbild Jugend"/>
+                                <connections>
+                                    <segue destination="Krn-Jp-zkR" kind="show" id="zlj-7D-dlZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxg-js-6Mg">
+                                <rect key="frame" x="187" y="395" width="150" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="area47_otztal_partyarea_riverhaus_1"/>
+                                <connections>
+                                    <segue destination="N4a-np-WuL" kind="show" id="fd6-ml-4tv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xwd-ML-Ec2">
+                                <rect key="frame" x="21" y="187" width="150" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="4911-familie-zapp-weltreise-3"/>
+                                <connections>
+                                    <segue destination="MfM-k9-j4D" kind="show" id="4PO-3L-HXh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="w6H-qb-7Yx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Kategorien" image="icons8-open-25" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="hzH-1g-iHV">
+                        <nil key="title"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="369"/>
+            <point key="canvasLocation" x="2112.8000000000002" y="322.90640394088672"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lRL-Sf-cOC">
+            <objects>
+                <viewController id="nSx-Jp-kkn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6QP-Sa-Th5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Erleben Sie Abenteuer in der Natur!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRq-8F-eGZ">
+                                <rect key="frame" x="55" y="115" width="267" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Za4-FX-qvA">
+                                <rect key="frame" x="61" y="192" width="251" height="218"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
+                                <string key="text">Erleben Sie mit Ihrer Familie spannende und aufregende Abenteuer draußen an der Natur. Genießen sie München und das Umland in vollen Züge und lassen Sie sich von unserem Angebot inspirieren. Für groß und klein ist immer etwas passendes dabei. Den es gibt nichts Besseres als einen Familienausflug in der Natur!</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="architektur-baume-draussen-712473" translatesAutoresizingMaskIntoConstraints="NO" id="zlp-cc-IlG">
+                                <rect key="frame" x="147" y="418" width="150" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="bezaubernd-bruder-draussen-341378" translatesAutoresizingMaskIntoConstraints="NO" id="zC7-NL-ggR">
+                                <rect key="frame" x="55" y="564" width="150" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ezH-mI-xWg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="REX-eq-lkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4296.8000000000002" y="190.64039408866995"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6Bs-6B-BF4">
+            <objects>
+                <viewController id="MfM-k9-j4D" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sIu-t4-GgY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sul-uC-EBu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Das Beste für Ihre Familie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaL-tt-jw0">
+                                        <rect key="frame" x="91" y="108" width="193" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tT3-oQ-eIV">
+                                        <rect key="frame" x="67" y="149" width="240" height="343"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <string key="text">Sie sind eine aktive Familie und haben Lust einen Tagesausflug mit Ihrem Liebsten zu machen? Ob Outdoor- oder Indoor-Aktivitäten. Ob günstig oder teuer. Etwas mit Action oder einfach nur ein ruhiger Wanderweg in Ihrer Region, es wird mit Sicherheit etwas für Ihre speziellen Anforderung geben. Ganz egal wie groß Ihre Familie ist, mit Ihren kleinen Rebellen oder mit den heranwachsenden Erwachsenen Jungen und Mädchen, das Angebot an Aktivitäten wird immer zu 100 Prozent aus Sie zugeschnitten sein.  </string>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="baby-besonderer-moment-draussen-377058" translatesAutoresizingMaskIntoConstraints="NO" id="4fV-aj-TUL">
+                                        <rect key="frame" x="184" y="493" width="150" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="familie-himmel-kinder-39691" translatesAutoresizingMaskIntoConstraints="NO" id="3TR-sv-MDT">
+                                        <rect key="frame" x="26" y="610" width="150" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SoE-XG-SXl"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nem-iz-gVv">
+                        <nil key="title"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J43-13-ID4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3237.5999999999999" y="-83.497536945812811"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="8F8-FZ-HsP" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="QgD-TG-6nN" kind="relationship" relationship="viewControllers" id="Dy1-ca-rft"/>
+                        <segue destination="m5a-gd-moi" kind="relationship" relationship="viewControllers" id="2RV-Zp-OQH"/>
                         <segue destination="qZH-zc-0BA" kind="relationship" relationship="viewControllers" id="0x3-ib-KN3"/>
+                        <segue destination="QgD-TG-6nN" kind="relationship" relationship="viewControllers" id="kZL-xN-Zqu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="14" y="17"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vTw-5p-2ZG">
@@ -861,7 +1082,7 @@
         <scene sceneID="oC3-pX-Viy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QgD-TG-6nN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Erstellen" selectedImage="second" id="1Pa-Ia-4jS"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Erstellen" image="icons8-neu-erstellen-25" selectedImage="icons8-neu-erstellen-25" id="1Pa-Ia-4jS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ou9-7X-wyk">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -869,20 +1090,23 @@
                         <color key="barTintColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wrq-gc-3S2">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="psw-un-a1V" kind="relationship" relationship="rootViewController" id="mXa-0f-IEE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Sa-Wc-58f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023" y="1037"/>
+            <point key="canvasLocation" x="1121" y="1101"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="b11-4E-3zg">
             <objects>
                 <viewController id="D2S-jH-6jv" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LRn-VR-KHp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEa-2m-MbO">
@@ -968,14 +1192,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ucn-wR-FvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1964" y="1851.7241379310346"/>
+            <point key="canvasLocation" x="1786" y="2008"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="g6O-hw-7MC">
             <objects>
                 <viewController id="w3e-Cd-Lui" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pfk-lA-mHv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Version 0.1" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="D2u-tU-EuK">
@@ -1029,18 +1253,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fsh-Ce-N1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5794" y="1690"/>
+            <point key="canvasLocation" x="5642" y="2008"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RPI-1T-e3Y">
             <objects>
                 <viewController id="WKT-nW-9mA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h27-Ic-F03">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="npu-GL-9QH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Impressum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xs-lD-GlY">
@@ -1132,14 +1356,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ao4-ln-feW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4492" y="1482"/>
+            <point key="canvasLocation" x="3921" y="2382"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="6SH-w8-vRW">
             <objects>
                 <viewController id="jf0-jk-ung" customClass="LoginViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DNY-Us-hL3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spT-f9-K2T">
@@ -1242,14 +1466,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNS-i9-N51" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3265" y="2354"/>
+            <point key="canvasLocation" x="2353" y="2970"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Dlv-dJ-zbU">
             <objects>
                 <viewController id="FTM-oH-Yms" customClass="RegisterViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qeh-xK-tWS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registrierung" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tj-po-PeK">
@@ -1396,7 +1620,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aR-Gt-kyp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4788" y="2256"/>
+            <point key="canvasLocation" x="4519" y="3072"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HOC-ys-3No">
@@ -1416,14 +1640,22 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAP-GC-pSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1021.6" y="1851.7241379310346"/>
+            <point key="canvasLocation" x="721" y="1910"/>
         </scene>
     </scenes>
     <resources>
         <image name="4911-familie-zapp-weltreise-3" width="431" height="242"/>
         <image name="Logo_SE1_white" width="400" height="93"/>
         <image name="Titelbild Jugend" width="780" height="428"/>
+        <image name="architektur-baume-draussen-712473" width="1000" height="805"/>
         <image name="area47_otztal_partyarea_riverhaus_1" width="1799" height="1200"/>
+        <image name="baby-besonderer-moment-draussen-377058" width="150" height="100"/>
+        <image name="bezaubernd-bruder-draussen-341378" width="1000" height="665"/>
+        <image name="chillen-draussen-entspannen-207936" width="1000" height="667"/>
+        <image name="damen-draussen-erholung-1117256" width="1000" height="488"/>
+        <image name="familie-himmel-kinder-39691" width="150" height="100"/>
+        <image name="icons8-neu-erstellen-25" width="25" height="25"/>
+        <image name="icons8-open-25" width="25" height="25"/>
         <image name="imageView:6IC-mV-h8c:image" width="400" height="93">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
@@ -4038,7 +4270,7 @@ AAAAAAAAAAAAAmHIA
 </mutableData>
         </image>
         <image name="natur-wald-teaser" width="660" height="397"/>
-        <image name="second" width="30" height="30"/>
         <image name="showcase" width="666" height="317"/>
     </resources>
+    <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
