@@ -21,7 +21,7 @@ class MapInterfaceController: WKInterfaceController, WKCrownDelegate {
 
     @IBAction func changeView(_ value: Float) {
         
-        let degrees:CLLocationDegrees = CLLocationDegrees(value / 700)
+        let degrees:CLLocationDegrees = CLLocationDegrees(value / 450)
         
         let span = MKCoordinateSpanMake(degrees, degrees)
         let region = MKCoordinateRegionMake(poiCoodinates, span)
@@ -45,7 +45,7 @@ class MapInterfaceController: WKInterfaceController, WKCrownDelegate {
         poiCoodinates.latitude = CDouble(latitude)!
         poiCoodinates.longitude = CDouble(longitude)!
         // Zoom to region
-        viewRegion = MKCoordinateRegionMakeWithDistance(poiCoodinates, 750, 750)
+        viewRegion = MKCoordinateRegionMakeWithDistance(poiCoodinates, 300, 300)
         // Create coordinates from location lat/long
         self.MapView.setRegion(viewRegion)
         self.MapView.addAnnotation(poiCoodinates, with: .red)
