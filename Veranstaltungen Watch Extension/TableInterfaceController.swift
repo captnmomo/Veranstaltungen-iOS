@@ -33,6 +33,7 @@ class TableInterfaceController: WKInterfaceController, WatchEventModelProtocol, 
         
         self.locationManager = CLLocationManager()
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
@@ -40,7 +41,7 @@ class TableInterfaceController: WKInterfaceController, WatchEventModelProtocol, 
         
         let eventDataModel = WatchEventDataModel()
         eventDataModel.delegate = self
-        eventDataModel.downloadItems()
+        eventDataModel.downloadItems(latitude: latitude, longitude: longitude)
         
        DispatchQueue.main.asyncAfter(deadline: .now() + 6.5) {
         
@@ -64,9 +65,9 @@ class TableInterfaceController: WKInterfaceController, WatchEventModelProtocol, 
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
-        defaultValues.set(location.coordinate.latitude, forKey: "latitude")
-        defaultValues.set(location.coordinate.longitude, forKey: "longitude")
-        print(defaultValues.double(forKey: "latitude"))
+        print(location.coordinate.latitude)
+        latitude = location.coordinate.latitude
+        longitude = location.coordinate.longitude
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {

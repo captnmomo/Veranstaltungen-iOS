@@ -17,9 +17,14 @@ protocol WatchEventModelProtocol: class {
 class WatchEventDataModel: NSObject, URLSessionDataDelegate {
     weak var delegate: WatchEventModelProtocol!
     var defaultValues = UserDefaults.standard
+    var latitudeEvent = Double()
+    var longitudeEvent = Double()
     
     
-    func downloadItems() {
+    func downloadItems(latitude: Double, longitude: Double) {
+        
+        latitudeEvent = latitude
+        longitudeEvent = longitude
         
         let urlPath = "https://gauss.wi.hm.edu/Veranstaltungen/watchevent.php"
         let url: URL = URL(string: urlPath)!
@@ -73,22 +78,20 @@ class WatchEventDataModel: NSObject, URLSessionDataDelegate {
                 var beschreibung = jsonElement["Text"] as? String
             {
                 
-                let latitudeInt = defaultValues.double(forKey: "latitude")
-                let longitudeInt = defaultValues.double(forKey: "longitude")
                 
                 let longitudeIntRes = Double(longitude)
                 let latitudeIntRes = Double(latitude)
                 
-                let cos = (latitudeInt * Double.pi / 180)
+                let cos = (latitudeEvent * Double.pi / 180)
                 
                 print("lat")
-                print(latitudeInt - latitudeIntRes!)
+                print(latitudeEvent - latitudeIntRes!)
                 print(3/110.574)
                 print("lon")
-                print(longitudeInt - longitudeIntRes!)
+                print(longitudeEvent - longitudeIntRes!)
                 print(3/(111.320*cos))
                     
-                    if latitudeInt-latitudeIntRes! <= (1/110.574) && latitudeInt-latitudeIntRes! >= -(1/110.574) && longitudeInt-longitudeIntRes! <= (1/(111.320*cos)) && longitudeInt-longitudeIntRes! >= -(1/(111.320*cos)){
+                    if latitudeEvent-latitudeIntRes! <= (1/110.574) && latitudeEvent-latitudeIntRes! >= -(1/110.574) && longitudeEvent-longitudeIntRes! <= (1/(111.320*cos)) && longitudeEvent-longitudeIntRes! >= -(1/(111.320*cos)){
                         
                         name = name.replacingOccurrences(of: "ae", with: "ä")
                         name = name.replacingOccurrences(of: "oe", with: "ö")

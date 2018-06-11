@@ -22,6 +22,8 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate, Wat
 
     override func awake(withContext context: Any?) {
         
+        print(defaultValues.double(forKey: "latitude"))
+        
         defaultValues.removeObject(forKey: "latitude")
         defaultValues.removeObject(forKey: "longitude")
         
