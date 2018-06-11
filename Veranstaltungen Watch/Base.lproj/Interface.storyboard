@@ -86,7 +86,7 @@
                 <controller identifier="mapView" id="8ls-wC-Tdr" customClass="MapInterfaceController" customModule="Veranstaltungen_Watch_Extension">
                     <items>
                         <map height="136" alignment="left" id="hL2-jw-NaJ"/>
-                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="ebj-W9-7UA">
+                        <slider width="1" alignment="left" continuous="YES" value="1" maximum="10" steps="10" id="ebj-W9-7UA">
                             <connections>
                                 <action selector="changeView:" destination="8ls-wC-Tdr" id="Qeg-Vd-Tmr"/>
                             </connections>
