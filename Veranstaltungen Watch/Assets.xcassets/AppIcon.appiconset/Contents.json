@@ -10,7 +10,7 @@
     {
       "size" : "27.5x27.5",
       "idiom" : "watch",
-      "filename" : "Icon_SE1-2 Kopie55px.jpg",
+      "filename" : "Icon_SE1_watch55.jpg",
       "scale" : "2x",
       "role" : "notificationCenter",
       "subtype" : "42mm"
@@ -30,7 +30,7 @@
     {
       "size" : "40x40",
       "idiom" : "watch",
-      "filename" : "Icon_SE1-2 Kopie80px*80px.jpg",
+      "filename" : "Icon_SE1_watch Kopie 355.jpg",
       "scale" : "2x",
       "role" : "appLauncher",
       "subtype" : "38mm"
@@ -38,7 +38,7 @@
     {
       "size" : "44x44",
       "idiom" : "watch",
-      "filename" : "Icon_SE1-2 Kopie88px.jpg",
+      "filename" : "Icon_SE1_watch Kopie 288.jpg",
       "scale" : "2x",
       "role" : "longLook",
       "subtype" : "42mm"
@@ -53,7 +53,7 @@
     {
       "size" : "98x98",
       "idiom" : "watch",
-      "filename" : "Icon_SE1-2 Kopie196px.jpg",
+      "filename" : "Icon_SE1_watch Kopie196.jpg",
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "42mm"
