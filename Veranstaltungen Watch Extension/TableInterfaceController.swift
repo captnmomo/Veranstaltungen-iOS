@@ -38,10 +38,11 @@ class TableInterfaceController: WKInterfaceController, WatchEventModelProtocol, 
         locationManager.startUpdatingLocation()
         
         // Configure interface objects here.
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
         let eventDataModel = WatchEventDataModel()
         eventDataModel.delegate = self
-        eventDataModel.downloadItems(latitude: latitude, longitude: longitude)
+        eventDataModel.downloadItems(latitude: self.latitude, longitude: self.longitude)
+        }
         
        DispatchQueue.main.asyncAfter(deadline: .now() + 6.5) {
         

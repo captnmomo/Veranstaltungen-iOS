@@ -103,7 +103,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         
         let eventDataModel = WatchEventDataModel()
         eventDataModel.delegate = self
-        eventDataModel.downloadItems()
+        eventDataModel.downloadItems(latitude: defaultValues.double(forKey: "latitude"), longitude: defaultValues.double(forKey: "longitude"))
         
         print("Test1")
         

@@ -26,6 +26,8 @@ class WatchEventDataModel: NSObject, URLSessionDataDelegate {
         latitudeEvent = latitude
         longitudeEvent = longitude
         
+        print(latitudeEvent)
+        
         let urlPath = "https://gauss.wi.hm.edu/Veranstaltungen/watchevent.php"
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)

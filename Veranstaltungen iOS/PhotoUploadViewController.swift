@@ -32,7 +32,7 @@ class PhotoUploadViewController: UIViewController, UIImagePickerControllerDelega
         let strassess = strasseSS.lowercased(with: .current)
         let ortCorrect = ortPassed.folding(options: .diacriticInsensitive, locale: .current)
         
-        let urlPath = "https://maps.googleapis.com/maps/api/geocode/json?address=" + strassess + "%20" + hausnummerPassed + ",%20" + ortCorrect + "&key=AIzaSyCi9HwD2zrfPCgZ-ILzfdISlGeGr0pfMfU";
+        let urlPath = "https://maps.googleapis.com/maps/api/geocode/json?address=" + strassess + "%20" + hausnummerPassed + ",%20" + ortCorrect + "&key=AIzaSyCi9HwD2zrfPCgZ-ILzfdISlGeGr0pfMfU"
         print(urlPath)
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
@@ -113,15 +113,16 @@ class PhotoUploadViewController: UIViewController, UIImagePickerControllerDelega
         print(longitude)
         print(latitude)
         print(websitePassed)
+        print(datumPassed)
         
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "MMM dd,yyyy"
+        dateFormatterPrint.dateFormat = "dd. MMM yyyy"
         
         let date = dateFormatterPrint.date(from: datumPassed)
-        let datumCorrect = dateFormatterGet.string(from: date!)
+        let datumCorrect = dateFormatterGet.string(from: date!) as String
         
         let params = [
             "name": namePassed,
