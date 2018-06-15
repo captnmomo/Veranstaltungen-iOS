@@ -14,7 +14,7 @@
         <!--First View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" id="9pv-A4-QxB" customClass="FirstViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHT-E6-ART">
-                                        <rect key="frame" x="8" y="132" width="359" height="30"/>
+                                        <rect key="frame" x="97" y="132" width="270" height="30"/>
                                         <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Suchen">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -127,12 +127,12 @@
                                     <constraint firstItem="ejM-zj-uzV" firstAttribute="leading" secondItem="fHn-bw-qLE" secondAttribute="leading" id="bqQ-sC-hcA"/>
                                     <constraint firstItem="IHT-E6-ART" firstAttribute="top" secondItem="qh8-YD-a5m" secondAttribute="bottom" constant="8" id="h0L-bb-VeM"/>
                                     <constraint firstAttribute="trailing" secondItem="NRH-mi-X6F" secondAttribute="trailing" constant="8" id="hzl-Fz-Fde"/>
+                                    <constraint firstItem="IHT-E6-ART" firstAttribute="leading" secondItem="qh8-YD-a5m" secondAttribute="leading" id="j0Y-hl-d7c"/>
                                     <constraint firstItem="XHj-Ah-sTI" firstAttribute="leading" secondItem="fHn-bw-qLE" secondAttribute="leading" id="kAm-mn-2Ld"/>
                                     <constraint firstAttribute="trailing" secondItem="iTq-rA-ENC" secondAttribute="trailing" constant="8" id="kTs-8e-yD5"/>
                                     <constraint firstItem="WeC-jn-KLh" firstAttribute="top" secondItem="nbd-E3-hKn" secondAttribute="top" id="lmi-n9-SJ7"/>
                                     <constraint firstItem="XHj-Ah-sTI" firstAttribute="leading" secondItem="nbd-E3-hKn" secondAttribute="leading" constant="8" id="pxX-BW-eNQ"/>
                                     <constraint firstItem="iTq-rA-ENC" firstAttribute="width" secondItem="weY-T7-NzP" secondAttribute="width" id="qsa-ML-vFj"/>
-                                    <constraint firstItem="IHT-E6-ART" firstAttribute="leading" secondItem="nbd-E3-hKn" secondAttribute="leading" constant="8" id="rbi-S0-Zqy"/>
                                     <constraint firstAttribute="bottom" secondItem="IHT-E6-ART" secondAttribute="bottom" constant="15" id="xHC-vY-Nrx"/>
                                     <constraint firstItem="qh8-YD-a5m" firstAttribute="centerY" secondItem="ejM-zj-uzV" secondAttribute="centerY" id="yei-8b-Sbc"/>
                                 </constraints>
@@ -245,6 +245,7 @@
                         <outlet property="textPreis2" destination="iTq-rA-ENC" id="u4K-rh-ju0"/>
                         <outlet property="textUmkreis" destination="qh8-YD-a5m" id="HCX-aP-zxi"/>
                         <segue destination="uQh-uD-ey0" kind="show" id="5h8-r0-wgQ"/>
+                        <segue destination="Bwz-we-u3D" kind="show" identifier="eventViewSegue" id="PH3-5g-bR6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -318,7 +319,7 @@
         <!--Event View Controller-->
         <scene sceneID="4Lx-Nq-AHU">
             <objects>
-                <viewController id="Bwz-we-u3D" customClass="EventViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventView" id="Bwz-we-u3D" customClass="EventViewController" customModule="Veranstaltungen_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x9T-3L-Oop">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -366,7 +367,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xas-06-E08">
-                                <rect key="frame" x="8" y="423" width="359" height="139"/>
+                                <rect key="frame" x="8" y="423" width="359" height="127"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -383,7 +384,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dD0-AZ-rrG">
-                                <rect key="frame" x="8" y="570" width="67" height="21"/>
+                                <rect key="frame" x="8" y="558" width="67" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -394,10 +395,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J20-Eg-iAc">
-                                <rect key="frame" x="83" y="570" width="284" height="21"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J20-Eg-iAc">
+                                <rect key="frame" x="83" y="558" width="284" height="33"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1346,7 +1346,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="rootView" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1377,7 +1377,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="KHy-16-zht"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="DEd-O6-Wqc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CSZ-bg-JuU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2099,5 +2099,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HDE-mO-SYV"/>
+        <segue reference="PH3-5g-bR6"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,12 +12,17 @@ import NotificationCenter
 
 import CoreLocation
 
-class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManagerDelegate, WatchEventModelProtocol {
+class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManagerDelegate, TodayEventModelProtocol {
     
     var locationManager: CLLocationManager = CLLocationManager()
+    var latitude: Double = Double()
+    var longitude: Double = Double()
     var defaultValues = UserDefaults.standard
     
-    var selectedLocation: WatchEventModel?
+    var selectedLocation: EventModel?
+    
+    var locationEvent: CLLocation = CLLocation()
+    var distance: Double = Double()
     
     var feedItems: NSArray = NSArray()
     
@@ -94,60 +99,89 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
     }
     
     override func viewDidLoad() {
+        labelName1.text = ""
+        labelName2.text = ""
+        labelName3.text = ""
+        labelName4.text = ""
+        labelDistance1.text = ""
+        labelDistance2.text = ""
+        labelDistance3.text = ""
+        labelDistance4.text = ""
         self.locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        let myLocation = CLLocation(latitude: defaultValues.double(forKey: "latitude"), longitude: defaultValues.double(forKey: "longitude"))
-        
-        let eventDataModel = WatchEventDataModel()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        let eventDataModel = TodayModel()
         eventDataModel.delegate = self
-        eventDataModel.downloadItems(latitude: defaultValues.double(forKey: "latitude"), longitude: defaultValues.double(forKey: "longitude"))
+            eventDataModel.downloadItems(latitude: self.latitude, longitude: self.longitude)
+        }
+        
         
         print("Test1")
         
-            var item: WatchEventModel = self.feedItems[0] as! WatchEventModel
-            var locationEvent = CLLocation(latitude: Double(item.latitude!)!, longitude: Double(item.longitude!)!)
-            var distance = myLocation.distance(from: locationEvent) / 1000
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        let myLocation = CLLocation(latitude: self.latitude, longitude: self.longitude)
+        if self.feedItems != nil && self.feedItems.count > 0 {
+            if self.feedItems.count >= 1 {
+        if let item: EventModel = self.feedItems[0] as? EventModel{
+            self.locationEvent = CLLocation(latitude: Double(item.latitude!)!, longitude: Double(item.longitude!)!)
+            self.distance = myLocation.distance(from: self.locationEvent) / 1000
         if let url = URL(string: "https://gauss.wi.hm.edu/Veranstaltungen/getImage.php?id=" + item.id!) {
-            image1.contentMode = .scaleAspectFit
-            downloadImage1(url: url)
+            self.image1.contentMode = .scaleAspectFit
+            self.downloadImage1(url: url)
         }
-        labelName1.text = item.name!
-        labelDistance1.text = String(distance) + "km"
-        
-        item = self.feedItems[1] as! WatchEventModel
-        locationEvent = CLLocation(latitude: Double(item.latitude!)!, longitude: Double(item.longitude!)!)
-        distance = myLocation.distance(from: locationEvent) / 1000
-        if let url = URL(string: "https://gauss.wi.hm.edu/Veranstaltungen/getImage.php?id=" + item.id!) {
-            image2.contentMode = .scaleAspectFit
-            downloadImage2(url: url)
+            self.labelName1.text = item.name!
+            let distanceDouble = Double(round(self.distance*100)/100)
+            self.labelDistance1.text = String(distanceDouble) + "km"
         }
-        labelName2.text = item.name!
-        labelDistance2.text = String(distance) + "km"
-        
-        item = self.feedItems[2] as! WatchEventModel
-        locationEvent = CLLocation(latitude: Double(item.latitude!)!, longitude: Double(item.longitude!)!)
-        distance = myLocation.distance(from: locationEvent) / 1000
-        if let url = URL(string: "https://gauss.wi.hm.edu/Veranstaltungen/getImage.php?id=" + item.id!) {
-            image3.contentMode = .scaleAspectFit
-            downloadImage3(url: url)
         }
-        labelName3.text = item.name!
-        labelDistance3.text = String(distance) + "km"
-        
-        item = self.feedItems[3] as! WatchEventModel
-        locationEvent = CLLocation(latitude: Double(item.latitude!)!, longitude: Double(item.longitude!)!)
-        distance = myLocation.distance(from: locationEvent) / 1000
-        if let url = URL(string: "https://gauss.wi.hm.edu/Veranstaltungen/getImage.php?id=" + item.id!) {
-            image4.contentMode = .scaleAspectFit
-            downloadImage4(url: url)
-        }
-        labelName4.text = item.name!
-        labelDistance4.text = String(distance) + "km"
             
+        if self.feedItems.count >= 2 {
+        if let item: EventModel = self.feedItems[1] as? EventModel {
+            self.locationEvent = CLLocation(latitude: Double(item.latitude!)!, longitude: Double(item.longitude!)!)
+            self.distance = myLocation.distance(from: self.locationEvent) / 1000
+        if let url = URL(string: "https://gauss.wi.hm.edu/Veranstaltungen/getImage.php?id=" + item.id!) {
+            self.self.image2.contentMode = .scaleAspectFill
+            self.downloadImage2(url: url)
+        }
+            self.labelName2.text = item.name!
+            let distanceDouble = Double(round(self.distance*100)/100)
+            self.labelDistance2.text = String(distanceDouble) + "km"
+            
+        }
+            }
         
+            if self.feedItems.count >= 3 {
+        if let item: EventModel = self.feedItems[2] as? EventModel {
+            self.locationEvent = CLLocation(latitude: Double(item.latitude!)!, longitude: Double(item.longitude!)!)
+            self.distance = myLocation.distance(from: self.locationEvent) / 1000
+        if let url = URL(string: "https://gauss.wi.hm.edu/Veranstaltungen/getImage.php?id=" + item.id!) {
+            self.self.image3.contentMode = .scaleAspectFill
+            self.downloadImage3(url: url)
+        }
+            self.labelName3.text = item.name!
+            let distanceDouble = Double(round(self.distance*100)/100)
+            self.labelDistance3.text = String(distanceDouble) + "km"
+        }
+            }
+        
+            if self.feedItems.count >= 4 {
+        if let item: EventModel = self.feedItems[3] as? EventModel {
+        self.locationEvent = CLLocation(latitude: Double(item.latitude!)!, longitude: Double(item.longitude!)!)
+            self.distance = myLocation.distance(from: self.locationEvent) / 1000
+        if let url = URL(string: "https://gauss.wi.hm.edu/Veranstaltungen/getImage.php?id=" + item.id!) {
+            self.image4.contentMode = .scaleToFill
+            self.downloadImage4(url: url)
+        }
+        self.labelName4.text = item.name!
+            let distanceDouble = Double(round(self.distance*100)/100)
+            self.labelDistance4.text = String(distanceDouble) + "km"
+        }
+        }
+        }
+        }
         
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
@@ -170,8 +204,9 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
-        defaultValues.set(location.coordinate.latitude, forKey: "latitude")
-        defaultValues.set(location.coordinate.longitude, forKey: "longitude")
+        latitude = location.coordinate.latitude
+        longitude = location.coordinate.longitude
+        print(latitude)
     }
     
 }

@@ -97,7 +97,7 @@ class ErstellenViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         dateFormatter.timeStyle = .none
         
-        //dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.locale = Locale(identifier: "de_DE")
         
         datum.text = dateFormatter.string(from: sender.date)
         

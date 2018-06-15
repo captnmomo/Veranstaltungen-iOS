@@ -7,6 +7,7 @@
 //
 
 import WatchKit
+import CoreLocation
 
 
 protocol WatchEventModelProtocol: class {
@@ -19,12 +20,12 @@ class WatchEventDataModel: NSObject, URLSessionDataDelegate {
     var defaultValues = UserDefaults.standard
     var latitudeEvent = Double()
     var longitudeEvent = Double()
+    var myLocation = CLLocation()
     
     
     func downloadItems(latitude: Double, longitude: Double) {
         
-        latitudeEvent = latitude
-        longitudeEvent = longitude
+        myLocation = CLLocation(latitude: latitude, longitude: longitude)
         
         print(latitudeEvent)
         
@@ -80,20 +81,16 @@ class WatchEventDataModel: NSObject, URLSessionDataDelegate {
                 var beschreibung = jsonElement["Text"] as? String
             {
                 
-                
                 let longitudeIntRes = Double(longitude)
                 let latitudeIntRes = Double(latitude)
                 
-                let cos = (latitudeEvent * Double.pi / 180)
                 
-                print("lat")
-                print(latitudeEvent - latitudeIntRes!)
-                print(3/110.574)
-                print("lon")
-                print(longitudeEvent - longitudeIntRes!)
-                print(3/(111.320*cos))
+                let locationEvent = CLLocation(latitude: latitudeIntRes!, longitude: longitudeIntRes!)
+                
+                print("location")
+                print(myLocation.distance(from: locationEvent) / 1000)
                     
-                    if latitudeEvent-latitudeIntRes! <= (1/110.574) && latitudeEvent-latitudeIntRes! >= -(1/110.574) && longitudeEvent-longitudeIntRes! <= (1/(111.320*cos)) && longitudeEvent-longitudeIntRes! >= -(1/(111.320*cos)){
+                    if myLocation.distance(from: locationEvent) / 1000 <= 1.3 {
                         
                         name = name.replacingOccurrences(of: "ae", with: "ä")
                         name = name.replacingOccurrences(of: "oe", with: "ö")

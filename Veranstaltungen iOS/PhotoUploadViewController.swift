@@ -27,6 +27,13 @@ class PhotoUploadViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        namePassed = namePassed.replacingOccurrences(of: " ", with: "")
+        strassePassed = strassePassed.replacingOccurrences(of: " ", with: "")
+        hausnummerPassed = hausnummerPassed.replacingOccurrences(of: " ", with: "")
+        ortPassed = ortPassed.replacingOccurrences(of: " ", with: "")
+        websitePassed = websitePassed.replacingOccurrences(of: " ", with: "")
+        preisPassed = preisPassed.replacingOccurrences(of: " ", with: "")
+        
         let strasseCorrect = strassePassed.folding(options: .diacriticInsensitive, locale: .current)
         let strasseSS = strasseCorrect.uppercased(with: .current)
         let strassess = strasseSS.lowercased(with: .current)
@@ -102,7 +109,7 @@ class PhotoUploadViewController: UIViewController, UIImagePickerControllerDelega
         
         if ImageView.image != nil {
         
-        let todo: String =  "https://gauss.wi.hm.edu/Veranstaltungen/upload.php"
+            let todo: String = "http://localhost:8888/upload.php"
         
         guard let url = URL(string: todo) else {
             print("Error: cannot create URL")
@@ -119,7 +126,7 @@ class PhotoUploadViewController: UIViewController, UIImagePickerControllerDelega
         dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "dd. MMM yyyy"
+        dateFormatterPrint.dateFormat = "dd.mm.yyyy"
         
         let date = dateFormatterPrint.date(from: datumPassed)
         let datumCorrect = dateFormatterGet.string(from: date!) as String

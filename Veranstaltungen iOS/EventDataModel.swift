@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol EventModelProtocol: class {
     func itemsDownloaded(items: NSArray)
@@ -76,25 +77,21 @@ class EventDataModel: NSObject, URLSessionDataDelegate {
                 var website = jsonElement["website"] as? String,
                 var beschreibung = jsonElement["Text"] as? String
             {
-                
-                let latitudeInt = defaultValues.double(forKey: "latitude")
-                let longitudeInt = defaultValues.double(forKey: "longitude")
+                let myLocation = CLLocation(latitude: defaultValues.double(forKey: "latitude"), longitude: defaultValues.double(forKey: "longitude"))
                 
                 let longitudeIntRes = Double(longitude)
                 let latitudeIntRes = Double(latitude)
+                
+                let locationEvent = CLLocation(latitude: latitudeIntRes!, longitude: longitudeIntRes!)
                 
                 let km1 = "10km"
                 let km2 = "30km"
                 let km3 = "50km"
                 let km4 = "100km"
                 
-                print(UmkreisString)
-                
-                let cos = (latitudeInt * Double.pi / 180)
-                
                 if UmkreisString == km2 {
                 
-                if latitudeInt-latitudeIntRes! <= 0.27131152 && latitudeInt-latitudeIntRes! >= -0.27131152 && longitudeInt-longitudeIntRes! <= (30/(111.320*cos)) && longitudeInt-longitudeIntRes! >= -(30/(111.320*cos)){
+                if myLocation.distance(from: locationEvent) / 1000 <= 30 {
                 
                 name = name.replacingOccurrences(of: "ae", with: "ä")
                 name = name.replacingOccurrences(of: "oe", with: "ö")
@@ -131,11 +128,7 @@ class EventDataModel: NSObject, URLSessionDataDelegate {
                     
                 }
                 }else if UmkreisString == km1 {
-                    print (latitudeInt-latitudeIntRes!)
-                    print(10/110.574)
-                    print(longitudeInt-longitudeIntRes!)
-                    print(10/111.320*cos)
-                    if latitudeInt-latitudeIntRes! <= (10/110.574) && latitudeInt-latitudeIntRes! >= -(10/110.574) && longitudeInt-longitudeIntRes! <= (10/(111.320*cos)) && longitudeInt-longitudeIntRes! >= -(10/(111.320*cos)){
+                    if myLocation.distance(from: locationEvent) / 1000 <= 10 {
                         
                         print("Test")
                         
@@ -175,8 +168,7 @@ class EventDataModel: NSObject, URLSessionDataDelegate {
                 }
                 
                 } else if UmkreisString == km3 {
-                    print("Test1")
-                    if latitudeInt-latitudeIntRes! <= (50/110.574) && latitudeInt-latitudeIntRes! >= -(50/110.574) && longitudeInt-longitudeIntRes! <= (50/(111.320*cos)) && longitudeInt-longitudeIntRes! >= -(50/(111.320*cos)){
+                    if myLocation.distance(from: locationEvent) / 1000 <= 50 {
                         
                         name = name.replacingOccurrences(of: "ae", with: "ä")
                         name = name.replacingOccurrences(of: "oe", with: "ö")
@@ -213,7 +205,7 @@ class EventDataModel: NSObject, URLSessionDataDelegate {
                         events.add(event)
                     }
                     }   else if UmkreisString == km4 {
-                        if latitudeInt-latitudeIntRes! <= (100/110.574) && latitudeInt-latitudeIntRes! >= -(100/110.574) && longitudeInt-longitudeIntRes! <= (100/(111.320*cos)) && longitudeInt-longitudeIntRes! >= -(100/(111.320*cos)){
+                        if myLocation.distance(from: locationEvent) / 1000 <= 100 {
                             
                             name = name.replacingOccurrences(of: "ae", with: "ä")
                             name = name.replacingOccurrences(of: "oe", with: "ö")

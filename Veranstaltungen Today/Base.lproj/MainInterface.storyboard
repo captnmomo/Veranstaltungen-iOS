@@ -57,7 +57,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qcx-eg-ox0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qcx-eg-ox0">
                                 <rect key="frame" x="168" y="20" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="lQc-ID-0lI"/>
@@ -109,6 +109,7 @@
                             <constraint firstItem="l2k-Ug-pxY" firstAttribute="centerX" secondItem="qcx-eg-ox0" secondAttribute="centerX" id="8P4-zg-1fV"/>
                             <constraint firstItem="A8M-kh-mfo" firstAttribute="top" secondItem="A39-is-Tc1" secondAttribute="bottom" constant="2" id="Dqw-bo-20X"/>
                             <constraint firstItem="p7N-ak-22D" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="20" id="E6C-V0-ff4"/>
+                            <constraint firstItem="ekH-k1-ILw" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="F2K-C1-Nvc"/>
                             <constraint firstItem="p7N-ak-22D" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="16" id="G4S-UU-coY"/>
                             <constraint firstItem="A39-is-Tc1" firstAttribute="top" secondItem="p7N-ak-22D" secondAttribute="bottom" constant="2" id="Jna-eg-MQr"/>
                             <constraint firstItem="f2n-u9-6hE" firstAttribute="top" secondItem="PVr-GS-ek3" secondAttribute="bottom" constant="2" id="SW6-vE-a4C"/>
@@ -124,7 +125,6 @@
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="PVr-GS-ek3" secondAttribute="trailing" constant="16" id="lDn-Tf-tpy"/>
                             <constraint firstItem="1wd-R8-njH" firstAttribute="centerX" secondItem="Nnb-iR-U2M" secondAttribute="centerX" id="m8R-O3-BKB"/>
                             <constraint firstItem="A8M-kh-mfo" firstAttribute="centerX" secondItem="A39-is-Tc1" secondAttribute="centerX" id="mZ9-na-pDC"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="ekH-k1-ILw" secondAttribute="trailing" constant="40" id="rwg-AQ-5GI"/>
                             <constraint firstItem="PVr-GS-ek3" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="20" id="tIa-nP-7P8"/>
                             <constraint firstItem="uex-Qr-695" firstAttribute="top" secondItem="l2k-Ug-pxY" secondAttribute="bottom" constant="2" id="thq-ON-9o7"/>
                             <constraint firstItem="uex-Qr-695" firstAttribute="centerX" secondItem="qcx-eg-ox0" secondAttribute="centerX" id="vwF-Tz-DD5"/>

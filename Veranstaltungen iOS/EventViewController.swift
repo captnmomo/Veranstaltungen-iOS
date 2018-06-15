@@ -83,7 +83,7 @@ class EventViewController: UIViewController {
     
     @objc func deleteEvent() {
         
-        let URL_DELETE = "http://localhost:8888/delete.php?id=" + selectedLocation!.id!;
+        let URL_DELETE = "https://gauss.wi.hm.edu/Veranstaltungen/delete.php?id=" + selectedLocation!.id!;
         print(URL_DELETE)
         let url: URL = URL(string: URL_DELETE)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)

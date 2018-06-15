@@ -54,6 +54,10 @@
 		FACC339920CE4676003380C5 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC339820CE4676003380C5 /* TodayViewController.swift */; };
 		FACC339C20CE4676003380C5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACC339A20CE4676003380C5 /* MainInterface.storyboard */; };
 		FACC33A020CE4676003380C5 /* Veranstaltungen Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FACC339420CE4676003380C5 /* Veranstaltungen Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FADEA3AB20D193A900C81038 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85729F20C6DA7F00455CB0 /* EventModel.swift */; };
+		FADEA3AD20D1947900C81038 /* TodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADEA3AC20D1947900C81038 /* TodayModel.swift */; };
+		FADEA3AF20D1947D00C81038 /* TodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADEA3AC20D1947900C81038 /* TodayModel.swift */; };
+		FADEA3B020D1973100C81038 /* EventDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572A120C6DAD300455CB0 /* EventDataModel.swift */; };
 		FAEC0C2920B592ED00674456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2820B592ED00674456 /* AppDelegate.swift */; };
 		FAEC0C2B20B592ED00674456 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2A20B592ED00674456 /* FirstViewController.swift */; };
 		FAEC0C2D20B592ED00674456 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC0C2C20B592ED00674456 /* SecondViewController.swift */; };
@@ -179,6 +183,9 @@
 		FACC339820CE4676003380C5 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		FACC339B20CE4676003380C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		FACC339D20CE4676003380C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FADEA3A920D186AF00C81038 /* Veranstaltungen iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Veranstaltungen iOS.entitlements"; sourceTree = "<group>"; };
+		FADEA3AA20D186BB00C81038 /* Veranstaltungen Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Veranstaltungen Today.entitlements"; sourceTree = "<group>"; };
+		FADEA3AC20D1947900C81038 /* TodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayModel.swift; sourceTree = "<group>"; };
 		FAEC0C2520B592ED00674456 /* Veranstaltungen iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Veranstaltungen iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEC0C2820B592ED00674456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAEC0C2A20B592ED00674456 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +287,7 @@
 		FACC339720CE4676003380C5 /* Veranstaltungen Today */ = {
 			isa = PBXGroup;
 			children = (
+				FADEA3AA20D186BB00C81038 /* Veranstaltungen Today.entitlements */,
 				FACC339820CE4676003380C5 /* TodayViewController.swift */,
 				FACC339A20CE4676003380C5 /* MainInterface.storyboard */,
 				FACC339D20CE4676003380C5 /* Info.plist */,
@@ -318,6 +326,7 @@
 		FAEC0C2720B592ED00674456 /* Veranstaltungen iOS */ = {
 			isa = PBXGroup;
 			children = (
+				FADEA3A920D186AF00C81038 /* Veranstaltungen iOS.entitlements */,
 				FA1CFA6420BB24DD0061B548 /* PhotoUploadViewController.swift */,
 				FAEC0C2A20B592ED00674456 /* FirstViewController.swift */,
 				FAEC0C2820B592ED00674456 /* AppDelegate.swift */,
@@ -342,6 +351,7 @@
 				FA0FE35E20CD4BF7005E04A6 /* KategorieViewController.swift */,
 				FA0FE39820CD65F1005E04A6 /* WatchEventDataModel.swift */,
 				FA0FE39A20CD6665005E04A6 /* WatchEventModel.swift */,
+				FADEA3AC20D1947900C81038 /* TodayModel.swift */,
 			);
 			path = "Veranstaltungen iOS";
 			sourceTree = "<group>";
@@ -493,9 +503,19 @@
 					};
 					FACC339320CE4675003380C5 = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					FAEC0C2420B592ED00674456 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					FAEC0C3A20B592EE00674456 = {
 						CreatedOnToolsVersion = 9.3;
@@ -603,8 +623,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADEA3B020D1973100C81038 /* EventDataModel.swift in Sources */,
 				FA14D67F20CE6249008ECA78 /* WatchEventDataModel.swift in Sources */,
 				FACC339920CE4676003380C5 /* TodayViewController.swift in Sources */,
+				FADEA3AB20D193A900C81038 /* EventModel.swift in Sources */,
+				FADEA3AF20D1947D00C81038 /* TodayModel.swift in Sources */,
 				FA14D68020CE624B008ECA78 /* WatchEventModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +655,7 @@
 				FAEC0C2920B592ED00674456 /* AppDelegate.swift in Sources */,
 				FA8572A220C6DAD300455CB0 /* EventDataModel.swift in Sources */,
 				FA8572AF20C875BD00455CB0 /* ProfileViewController.swift in Sources */,
+				FADEA3AD20D1947900C81038 /* TodayModel.swift in Sources */,
 				FAEC0C2B20B592ED00674456 /* FirstViewController.swift in Sources */,
 				FA780B2020CD73A700077C8D /* InterfaceController.swift in Sources */,
 				FA07360120BAB5EC00CE409E /* TableViewController.swift in Sources */,
@@ -810,6 +834,7 @@
 		FACC33A120CE4676003380C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Veranstaltungen Today/Veranstaltungen Today.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VE85X6LN8T;
@@ -831,6 +856,7 @@
 		FACC33A220CE4676003380C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Veranstaltungen Today/Veranstaltungen Today.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VE85X6LN8T;
@@ -968,6 +994,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Veranstaltungen iOS/Veranstaltungen iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VE85X6LN8T;
@@ -990,6 +1017,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Veranstaltungen iOS/Veranstaltungen iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VE85X6LN8T;
