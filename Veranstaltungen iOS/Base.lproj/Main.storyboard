@@ -367,14 +367,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xas-06-E08">
-                                <rect key="frame" x="8" y="423" width="359" height="127"/>
+                                <rect key="frame" x="8" y="423" width="359" height="211"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJ1-sx-7ro">
-                                <rect key="frame" x="8" y="599" width="359" height="30"/>
+                                <rect key="frame" x="8" y="683" width="359" height="30"/>
                                 <color key="backgroundColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Karte">
                                     <color key="titleColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -384,7 +384,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dD0-AZ-rrG">
-                                <rect key="frame" x="8" y="558" width="67" height="33"/>
+                                <rect key="frame" x="8" y="642" width="67" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -396,7 +396,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J20-Eg-iAc">
-                                <rect key="frame" x="83" y="558" width="284" height="33"/>
+                                <rect key="frame" x="83" y="642" width="284" height="33"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -414,7 +414,6 @@
                             <constraint firstItem="wGQ-U8-o4N" firstAttribute="top" secondItem="lRd-8Z-byj" secondAttribute="bottom" constant="8" id="E8C-ZM-SdH"/>
                             <constraint firstItem="0er-Pv-0wK" firstAttribute="trailing" secondItem="J20-Eg-iAc" secondAttribute="trailing" constant="8" id="FgZ-3x-udi"/>
                             <constraint firstItem="0er-Pv-0wK" firstAttribute="trailing" secondItem="PJ1-sx-7ro" secondAttribute="trailing" constant="8" id="JAo-Sf-7fG"/>
-                            <constraint firstAttribute="bottom" secondItem="PJ1-sx-7ro" secondAttribute="bottom" constant="100" id="KBX-eW-ibC"/>
                             <constraint firstItem="v1m-qf-vXh" firstAttribute="top" secondItem="lRd-8Z-byj" secondAttribute="bottom" constant="8" id="KoB-17-dV3"/>
                             <constraint firstItem="0er-Pv-0wK" firstAttribute="trailing" secondItem="lRd-8Z-byj" secondAttribute="trailing" constant="8" id="MBo-j6-OLJ"/>
                             <constraint firstItem="J20-Eg-iAc" firstAttribute="leading" secondItem="dD0-AZ-rrG" secondAttribute="trailing" constant="8" id="Mr2-uY-URC"/>
@@ -430,6 +429,7 @@
                             <constraint firstItem="dD0-AZ-rrG" firstAttribute="leading" secondItem="bV8-TC-Tle" secondAttribute="leading" id="lan-SQ-9es"/>
                             <constraint firstItem="Xas-06-E08" firstAttribute="top" secondItem="1bN-lD-DIf" secondAttribute="bottom" constant="8" id="llt-gY-nRC"/>
                             <constraint firstItem="Til-Oo-5ch" firstAttribute="top" secondItem="0er-Pv-0wK" secondAttribute="top" constant="8" id="mtK-6d-aP8"/>
+                            <constraint firstItem="0er-Pv-0wK" firstAttribute="bottom" secondItem="PJ1-sx-7ro" secondAttribute="bottom" constant="16" id="nJI-kz-Oiu"/>
                             <constraint firstItem="J20-Eg-iAc" firstAttribute="centerY" secondItem="dD0-AZ-rrG" secondAttribute="centerY" id="o1F-m8-aHz"/>
                             <constraint firstItem="1bN-lD-DIf" firstAttribute="top" secondItem="e5d-ec-MVF" secondAttribute="bottom" constant="8" id="p3o-1Z-7S9"/>
                             <constraint firstItem="bV8-TC-Tle" firstAttribute="leading" secondItem="0er-Pv-0wK" secondAttribute="leading" constant="8" id="pAf-XH-hb6"/>
@@ -486,11 +486,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZG-Fz-Dab">
-                                <rect key="frame" x="0.0" y="699" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="684" width="375" height="45"/>
                                 <color key="backgroundColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2BL-lG-Lix"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Kx0-fm-AfW"/>
+                                    <constraint firstAttribute="height" constant="45" id="YeE-wZ-i6y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Navigation zum Veranstaltungsort">
@@ -501,7 +500,7 @@
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iLe-NY-zex">
-                                <rect key="frame" x="0.0" y="88" width="375" height="611"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="596"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

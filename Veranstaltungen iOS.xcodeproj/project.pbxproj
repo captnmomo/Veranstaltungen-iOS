@@ -46,8 +46,6 @@
 		FA8572A420C803F400455CB0 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572A320C803F400455CB0 /* EventViewController.swift */; };
 		FA8572A620C805BA00455CB0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572A520C805BA00455CB0 /* MapViewController.swift */; };
 		FA8572A920C8070600455CB0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8572A820C8070600455CB0 /* MapKit.framework */; };
-		FA8572AB20C863D200455CB0 /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572AA20C863D200455CB0 /* LoginDataModel.swift */; };
-		FA8572AD20C868F100455CB0 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572AC20C868F100455CB0 /* LoginModel.swift */; };
 		FA8572AF20C875BD00455CB0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572AE20C875BD00455CB0 /* ProfileViewController.swift */; };
 		FA8572B120C87F5F00455CB0 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8572B020C87F5F00455CB0 /* MoreViewController.swift */; };
 		FACC339620CE4676003380C5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC339520CE4676003380C5 /* NotificationCenter.framework */; };
@@ -174,8 +172,6 @@
 		FA8572A320C803F400455CB0 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		FA8572A520C805BA00455CB0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FA8572A820C8070600455CB0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		FA8572AA20C863D200455CB0 /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
-		FA8572AC20C868F100455CB0 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		FA8572AE20C875BD00455CB0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FA8572B020C87F5F00455CB0 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		FACC339420CE4676003380C5 /* Veranstaltungen Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Veranstaltungen Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -343,8 +339,6 @@
 				FA8572A120C6DAD300455CB0 /* EventDataModel.swift */,
 				FA8572A320C803F400455CB0 /* EventViewController.swift */,
 				FA8572A520C805BA00455CB0 /* MapViewController.swift */,
-				FA8572AA20C863D200455CB0 /* LoginDataModel.swift */,
-				FA8572AC20C868F100455CB0 /* LoginModel.swift */,
 				FA8572AE20C875BD00455CB0 /* ProfileViewController.swift */,
 				FA8572B020C87F5F00455CB0 /* MoreViewController.swift */,
 				FA25C7ED20CC3DF2009B700F /* DoneViewController.swift */,
@@ -639,7 +633,6 @@
 				FA04AD1320CD8B8700417DCE /* EventInterfaceController.swift in Sources */,
 				FA780B1F20CD6D4400077C8D /* rowController.swift in Sources */,
 				FA6459D220BC05E400770EE6 /* LoginViewController.swift in Sources */,
-				FA8572AD20C868F100455CB0 /* LoginModel.swift in Sources */,
 				FA8572A420C803F400455CB0 /* EventViewController.swift in Sources */,
 				FAEC0C2D20B592ED00674456 /* SecondViewController.swift in Sources */,
 				FA6459D020BB2A0500770EE6 /* ErstellenViewController.swift in Sources */,
@@ -650,7 +643,6 @@
 				FA0FE3A020CD69E2005E04A6 /* TableInterfaceController.swift in Sources */,
 				FA1CFA6520BB24DD0061B548 /* PhotoUploadViewController.swift in Sources */,
 				FA8572A620C805BA00455CB0 /* MapViewController.swift in Sources */,
-				FA8572AB20C863D200455CB0 /* LoginDataModel.swift in Sources */,
 				FA0FE39D20CD6832005E04A6 /* WatchEventDataModel.swift in Sources */,
 				FAEC0C2920B592ED00674456 /* AppDelegate.swift in Sources */,
 				FA8572A220C6DAD300455CB0 /* EventDataModel.swift in Sources */,

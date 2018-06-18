@@ -49,12 +49,20 @@ class EventViewController: UIViewController {
     @IBOutlet weak var preisLabel: UILabel!
     @IBOutlet weak var Bild: UIImageView!
     override func viewDidLoad() {
-        datumLabel.text = selectedLocation!.datum!
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-mm-dd"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "dd.mm.yyyy"
+        
+        let date = dateFormatterGet.date(from: selectedLocation!.datum!)
+        datumLabel.text = dateFormatterPrint.string(from: date!) as String
+        //datumLabel.text = selectedLocation!.datum!
         kategorieLabel.text = selectedLocation!.kategorie!
         preisLabel.text = selectedLocation!.preis! + "€"
         nameLabel.text = selectedLocation!.name!
         websiteField.isEditable = false
-        websiteField.contentInset = UIEdgeInsetsMake(-6.0,0.0,0,0.0)
+        websiteField.contentInset = UIEdgeInsetsMake(0,0.0,0,0.0)
         websiteField.dataDetectorTypes = UIDataDetectorTypes.all
         websiteField.text = selectedLocation!.website!
         beschreibungField.text = selectedLocation!.beschreibung!
